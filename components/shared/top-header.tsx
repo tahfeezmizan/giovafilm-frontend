@@ -1,12 +1,45 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { MapIcon, LayoutGrid, Gift, BookOpen } from "lucide-react";
 
 export default function TopHeader() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = [
+    {
+      label: "Map",
+      path: "/map",
+      icon: <MapIcon className="w-6 h-6" />,
+    },
+    {
+      label: "Places",
+      path: "/places",
+      icon: <LayoutGrid className="w-6 h-6" />,
+    },
+    {
+      label: "Offer",
+      path: "/offer",
+      icon: <Gift className="w-6 h-6" />,
+    },
+    {
+      label: "Catalog",
+      path: "/",
+      icon: <BookOpen className="w-6 h-6" />,
+    },
+  ];
+
   return (
     <div>
-      <header className="px-5 pt-6 pb-4 sticky top-0  z-20">
+      <header className="px-5 pt-6 pb-4 sticky top-0 z-20">
         <div className="flex items-center rounded-full px-4 py-2 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50">
+          {/* Hamburger + Search */}
           <div className="flex items-center gap-3 flex-1">
-            <div className="w-8 h-8 flex items-center justify-center">
+            <div
+              className="w-8 h-8 flex items-center justify-center cursor-pointer"
+              onClick={() => setMenuOpen(true)}
+            >
               <svg
                 width="24"
                 height="24"
@@ -26,10 +59,9 @@ export default function TopHeader() {
               Search digital maps, cities...
             </span>
           </div>
-          <div
-            className="w-10 h-10 rounded-full border-2 border-[#FFC107] p-0.5 overflow-hidden cursor-pointer"
-            // onClick={() => onNavigate("login")}
-          >
+
+          {/* Profile */}
+          <div className="w-10 h-10 rounded-full border-2 border-[#FFC107] p-0.5 overflow-hidden cursor-pointer">
             <img
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100"
               alt="Profile"
@@ -39,6 +71,44 @@ export default function TopHeader() {
           </div>
         </div>
       </header>
+
+      {/* Side Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/40 z-30 transition-opacity duration-300 ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setMenuOpen(false)}
+      />
+
+      {/* Slide-in Menu */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white z-40 shadow-lg transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center px-5 py-4 border-b">
+          <h2 className="text-lg font-bold">Menu</h2>
+          <button onClick={() => setMenuOpen(false)} className="text-gray-500">
+            ✕
+          </button>
+        </div>
+
+        <nav className="flex flex-col px-4 mt-4 space-y-2">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              href={item.path}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              {item.icon}
+              <span className="text-gray-700 font-medium">{item.label}</span>
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 }
