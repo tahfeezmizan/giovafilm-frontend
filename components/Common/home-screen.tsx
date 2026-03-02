@@ -1,13 +1,7 @@
-import React from "react";
-import { motion } from "motion/react";
 import {
-  Heart,
-  Map as MapIcon,
-  LayoutGrid,
-  Gift,
-  BookOpen,
+    Heart
 } from "lucide-react";
-import { NavItem } from "./NavItem";
+import { motion } from "motion/react";
 
 export const HomeScreen = ({
   onNavigate,
@@ -66,8 +60,8 @@ export const HomeScreen = ({
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      {/* Top Search Bar */}
+    <div className="flex flex-col min-h-screen">
+      {/* Top Search Bar
       <header className="px-5 pt-6 pb-4 sticky top-0 bg-white/80 backdrop-blur-md z-20">
         <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-50">
           <div className="flex items-center gap-3 flex-1">
@@ -103,7 +97,7 @@ export const HomeScreen = ({
             />
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* Content */}
       <main className="px-5 flex-1 pb-24">
@@ -125,7 +119,7 @@ export const HomeScreen = ({
               className="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col cursor-pointer"
             >
               {/* Image Container */}
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-4/3">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -158,18 +152,6 @@ export const HomeScreen = ({
           ))}
         </div>
       </main>
-
-      {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-107.5 bg-white border-t border-gray-100 px-6 py-3 flex justify-between items-center z-30">
-        <NavItem icon={<MapIcon className="w-6 h-6" />} label="Map" />
-        <NavItem icon={<LayoutGrid className="w-6 h-6" />} label="Places" />
-        <NavItem icon={<Gift className="w-6 h-6" />} label="Offer" />
-        <NavItem
-          icon={<BookOpen className="w-6 h-6" />}
-          label="Catalog"
-          active
-        />
-      </nav>
     </div>
   );
 };
