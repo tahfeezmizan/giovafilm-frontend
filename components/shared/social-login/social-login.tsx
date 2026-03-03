@@ -4,7 +4,7 @@ import React from "react";
 export default function SocialLogin() {
   return (
     <div className="w-full grid grid-cols-2 gap-4 mb-10">
-      <button className="flex items-center justify-center gap-3 py-3.5 bg-white border border-[#EEEEEE] rounded-2xl shadow-sm hover:bg-gray-50 transition-all">
+      <button className="flex items-center justify-center gap-3 py-3.5 bg-white border border-[#EEEEEE] rounded-2xl shadow-sm hover:bg-gray-50 transition-all cursor-pointer">
         <Image
           src={require("@/public/google.png")}
           alt="Google"
@@ -14,7 +14,7 @@ export default function SocialLogin() {
         />
         <span className="text-sm font-bold text-[#424242]">Google</span>
       </button>
-      <button className="flex items-center justify-center gap-3 py-3.5 bg-white border border-[#EEEEEE] rounded-2xl shadow-sm hover:bg-gray-50 transition-all">
+      <button className="flex items-center justify-center gap-3 py-3.5 bg-white border border-[#EEEEEE] rounded-2xl shadow-sm hover:bg-gray-50 transition-all cursor-pointer">
         <Image
           src={require("@/public/facebook.png")}
           alt="Facebook"

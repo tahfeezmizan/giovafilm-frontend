@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Epilogue, Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const epilogue = Epilogue({
-  variable: "--font-epilogue",
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${epilogue.variable} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} ${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }
