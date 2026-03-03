@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form";
 import SocialLogin from "../shared/social-login/social-login";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
-import { Label } from "../ui/label";
 import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 
 type FormValues = {
   fullName: string;

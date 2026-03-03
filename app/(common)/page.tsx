@@ -31,15 +31,7 @@ export default function App() {
             className="w-full h-full"
           >
             <HomeScreen />
-            {/* {currentScreen === "login" && (
-              <LoginScreen onNavigate={setCurrentScreen} />
-            )}
-            {currentScreen === "signup" && (
-              <SignupScreen onNavigate={setCurrentScreen} />
-            )}
-            {currentScreen === "details" && (
-              <DetailsScreen onNavigate={setCurrentScreen} />
-            )} */}
+            
           </motion.div>
         </AnimatePresence>
       </div>

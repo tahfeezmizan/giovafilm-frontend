@@ -1,59 +1,62 @@
+"use client";
+
 import { Heart } from "lucide-react";
 import { motion } from "motion/react";
 import { useView } from "../context/view-context";
+import Link from "next/link";
+
+export const MAP_CARDS = [
+  {
+    id: 1,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
+  },
+  {
+    id: 2,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1772289935663-80aa987be656?q=80&w=1170",
+  },
+  {
+    id: 3,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1693707994429-95caaceab2a4?q=80&w=1074",
+  },
+  {
+    id: 4,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1772289935663-80aa987be656?q=80&w=1170",
+  },
+  {
+    id: 5,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
+  },
+  {
+    id: 6,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1693707994429-95caaceab2a4?q=80&w=1074",
+  },
+];
 
 export const HomeScreen = () => {
-  const MAP_CARDS = [
-    {
-      id: 1,
-      title: "Rome Historic Center Walking Tour",
-      subtitle: "Professional Guide",
-      price: "$9.99",
-      image:
-        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
-    },
-    {
-      id: 2,
-      title: "Rome Historic Center Walking Tour",
-      subtitle: "Professional Guide",
-      price: "$9.99",
-      image:
-        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
-    },
-    {
-      id: 3,
-      title: "Rome Historic Center Walking Tour",
-      subtitle: "Professional Guide",
-      price: "$9.99",
-      image:
-        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
-    },
-    {
-      id: 4,
-      title: "Rome Historic Center Walking Tour",
-      subtitle: "Professional Guide",
-      price: "$9.99",
-      image:
-        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
-    },
-    {
-      id: 5,
-      title: "Rome Historic Center Walking Tour",
-      subtitle: "Professional Guide",
-      price: "$9.99",
-      image:
-        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
-    },
-    {
-      id: 6,
-      title: "Rome Historic Center Walking Tour",
-      subtitle: "Professional Guide",
-      price: "$9.99",
-      image:
-        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
-    },
-  ];
-
   const { largeView } = useView();
 
   return (
@@ -77,7 +80,7 @@ export const HomeScreen = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: card.id * 0.05 }}
               //   onClick={() => onNavigate("details")}
-              className="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col cursor-pointer"
+              className="bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col cursor-pointer pb-2"
             >
               {/* Image Container */}
               <div className="relative aspect-4/3">
@@ -104,9 +107,12 @@ export const HomeScreen = () => {
                   <span className="text-sm font-bold text-[#1A1A1A] block mb-2">
                     {card.price}
                   </span>
-                  <button className="w-full py-2.5 bg-[#FFC107] hover:bg-[#FFB300] text-white text-[12px] font-bold rounded-full transition-colors shadow-sm">
+                  <Link
+                    href={`/details/${card.id}`}
+                    className="px-[54px] py-2.5 bg-[#FFC107] hover:bg-[#FFB300] text-white text-[12px] font-bold rounded-full transition-colors shadow-sm"
+                  >
                     Buy Now
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
