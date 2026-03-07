@@ -73,10 +73,12 @@
 import { ViewContext } from "@/components/context/view-context";
 import BottomNavbar from "@/components/shared/bottom-navbar";
 import TopHeader from "@/components/shared/top-header";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [largeView, setLargeView] = useState(false);
+  const pathName = usePathname();
 
   return (
     <ViewContext.Provider value={{ largeView, setLargeView }}>
@@ -85,7 +87,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           largeView ? "max-w-7xl" : "max-w-107.5 shadow-2xl"
         }`}
       >
-        <TopHeader />
+        {pathName !== "/profile" && <TopHeader />}
 
         <div className="flex justify-end px-4 pt-2">
           <button
@@ -98,7 +100,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {children}
 
-        {largeView ? "" : <BottomNavbar />}
+        {pathName !== "/profile" && <BottomNavbar />}
+        {/* {largeView ? "" : <BottomNavbar />} */}
       </div>
     </ViewContext.Provider>
   );

@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import { BookOpen, Gift, LayoutGrid, MapIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { MapIcon, LayoutGrid, Gift, BookOpen } from "lucide-react";
+import { useState } from "react";
 
 export default function TopHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,14 +62,19 @@ export default function TopHeader() {
           </div>
 
           {/* Profile */}
-          <div className="w-10 h-10 rounded-full border-2 border-[#FFC107] p-0.5 overflow-hidden cursor-pointer">
-            <img
+          <Link
+            href={"/profile"}
+            className="w-10 h-10 rounded-full border-2 border-[#FFC107] p-0.5 overflow-hidden cursor-pointer"
+          >
+            <Image
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100"
               alt="Profile"
+              width={100}
+              height={100}
               className="w-full h-full rounded-full object-cover"
               referrerPolicy="no-referrer"
             />
-          </div>
+          </Link>
         </div>
       </header>
 

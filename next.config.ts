@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-
   images: {
     remotePatterns: [
       {
@@ -13,16 +11,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "**",
-        pathname: "/**",
-      },
-      {
-        protocol: "http",
-        hostname: "**",
+        hostname: "images.unsplash.com",
         pathname: "/**",
       },
     ],
-    unoptimized: true,
   },
 };
 

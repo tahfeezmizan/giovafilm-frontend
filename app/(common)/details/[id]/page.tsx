@@ -32,7 +32,7 @@ export default function DetailsScreen() {
       <main className="flex-1 px-6 pt-6 pb-24">
         {/* Hero Image */}
         <div className="relative mb-8">
-          <div className="aspect-4/3 rounded-[40px] overflow-hidden shadow-xl">
+          <div className="aspect-4/3 rounded-2xl overflow-hidden shadow-xl">
             <Image
               src={data?.image}
               alt={data?.title}
@@ -65,7 +65,7 @@ export default function DetailsScreen() {
         </div>
 
         {/* Buy Button */}
-        <button className="w-full py-5 bg-[#FFC107] text-white font-bold rounded-2xl shadow-[0_12px_24px_rgba(255,193,7,0.4)] flex items-center justify-center gap-3 mb-10 hover:scale-[1.02] transition-transform active:scale-95">
+        <button className="w-full py-4 bg-[#FFC107] text-white font-bold rounded-2xl shadow-[0_12px_24px_rgba(255,193,7,0.4)] flex items-center justify-center gap-3 mb-10 hover:scale-[1.02] transition-transform active:scale-95">
           <ShoppingCart className="w-6 h-6" />
           <span className="text-lg uppercase tracking-wide">Buy Now</span>
         </button>
