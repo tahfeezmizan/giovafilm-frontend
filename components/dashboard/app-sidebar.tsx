@@ -98,10 +98,10 @@ export function AppSidebar() {
         </Link>
       </div>
 
-      <SidebarContent className="pt-6 ">
+      <SidebarContent className="pt-6">
         <SidebarGroup className="p-0 shadow-none">
           <SidebarGroupContent>
-            <SidebarMenu className="space-y-3">
+            <SidebarMenu className="space-y-3 px-2">
               {menuItems.map((item) => {
                 const isActive = pathname === item.url;
 
@@ -109,18 +109,20 @@ export function AppSidebar() {
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
                       <Link
+                        id="sidebarLink"
                         href={item.url}
-                        className={`flex items-center gap-4 px-5 py-4 rounded-2xl text-[16px] font-medium transition-all
-                        
-                        ${
-                          isActive
-                            ? "bg-[#f5b301] text-black shadow-md"
-                            : "text-black hover:bg-yellow-400/80"
-                        }
-                        
-                        `}
+                        className={`relative flex items-center gap-4 px-4 py-6! text-lg! rounded-2xl font-medium transition-all
+          
+          before:content-[''] before:absolute before:left-[-10px] before:top-1/2 before:-translate-y-1/2 before:h-12 before:w-[4px] before:bg-[#f5b301] before:rounded-r-md
+          
+          ${
+            isActive
+              ? "bg-[#f5b301] text-black shadow-md"
+              : "text-black hover:bg-yellow-400/80"
+          }                        
+          `}
                       >
-                        <item.icon className="w-5 h-5" />
+                        <item.icon className="size-6!" />
                         <span>{item.title}</span>
                       </Link>
                     </SidebarMenuButton>
