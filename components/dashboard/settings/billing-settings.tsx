@@ -1,7 +1,7 @@
 "use client";
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function BillingSettings() {
   return (
@@ -18,15 +18,15 @@ export function BillingSettings() {
           </p>
         </div>
 
-        <Button variant="outline" className="w-full justify-start">
+        <Button variant="outline" className="py-5 w-full justify-start">
           Manage Subscription
         </Button>
 
-        <Button variant="outline" className="w-full justify-start">
+        <Button variant="outline" className="py-5 w-full justify-start">
           Update Payment Method
         </Button>
 
-        <Button variant="outline" className="w-full justify-start">
+        <Button variant="outline" className="py-5 w-full justify-start">
           View Billing History
         </Button>
       </CardContent>

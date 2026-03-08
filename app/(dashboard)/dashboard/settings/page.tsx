@@ -1,7 +1,6 @@
 import { BillingSettings } from "@/components/dashboard/settings/billing-settings";
 import { GeneralSettings } from "@/components/dashboard/settings/general-settings";
 import { NotificationSettings } from "@/components/dashboard/settings/notifications-settings";
-import { SecuritySettings } from "@/components/dashboard/settings/security-settings";
 
 export default function page() {
   return (
@@ -15,7 +14,7 @@ export default function page() {
 
         <NotificationSettings />
 
-        <SecuritySettings />
+        {/* <SecuritySettings /> */}
 
         <BillingSettings />
       </div>
