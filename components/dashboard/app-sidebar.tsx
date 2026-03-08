@@ -35,47 +35,47 @@ const menuItems = [
   },
   {
     title: "Maps",
-    url: "/maps",
+    url: "/dashboard/maps",
     icon: Map,
   },
   {
     title: "Places",
-    url: "/places",
+    url: "/dashboard/places",
     icon: MapPin,
   },
   {
     title: "Categories",
-    url: "/categories",
+    url: "/dashboard/categories",
     icon: Tag,
   },
   {
     title: "Offers",
-    url: "/offers",
+    url: "/dashboard/offers",
     icon: BadgePercent,
   },
   {
     title: "Users & Roles",
-    url: "/users-roles",
+    url: "/dashboard/users-roles",
     icon: Users,
   },
   {
     title: "Notification",
-    url: "/notification",
+    url: "/dashboard/notification",
     icon: Bell,
   },
   {
     title: "Business",
-    url: "/business",
+    url: "/dashboard/business",
     icon: Building2,
   },
   {
     title: "Reports & Statistics",
-    url: "/reports",
+    url: "/dashboard/reports",
     icon: BarChart3,
   },
   {
     title: "Settings",
-    url: "/settings",
+    url: "/dashboard/settings",
     icon: Settings,
   },
 ];
