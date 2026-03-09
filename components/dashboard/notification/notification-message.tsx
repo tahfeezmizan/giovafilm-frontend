@@ -45,7 +45,7 @@ export default function NotificationMessage() {
         <Button
           variant="outline"
           size={"sm"}
-          className="text-sm bg-primary/30 hover:bg-primary/30 text-[#A16207] font-semibold rounded-full"
+          className="text-sm bg-primary/30 hover:bg-primary/30 text-[#A16207] font-semibold rounded-full px-2 py-1!"
         >
           5 NEW
         </Button>

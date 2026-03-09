@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Search, MoreHorizontal, RotateCcw } from "lucide-react";
 
 interface Business {
@@ -54,6 +55,7 @@ const businessTableHeaders = [
 ];
 
 export function BusinessTable() {
+  const router = useRouter();
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggleSelect = (id: string) => {
@@ -151,11 +153,14 @@ export function BusinessTable() {
             {businesses.map((business, index) => (
               <tr
                 key={business.id}
+                onClick={() =>
+                  router.push(`/dashboard/business/${business.id}`)
+                }
                 className={`${
                   index !== businesses.length - 1
                     ? "border-b border-gray-100"
                     : ""
-                } hover:bg-gray-50`}
+                } hover:bg-gray-50 cursor-pointer`}
               >
                 {/* Checkbox */}
                 <td className="px-6 py-4">
