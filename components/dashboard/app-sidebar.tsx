@@ -111,15 +111,12 @@ export function AppSidebar() {
                       <Link
                         id="sidebarLink"
                         href={item.url}
-                        className={`relative flex items-center gap-4 px-4 py-6! text-lg! rounded-2xl font-medium transition-all
-          
-          before:content-[''] before:absolute before:left-[-10px] before:top-1/2 before:-translate-y-1/2 before:h-12 before:w-[4px] before:bg-[#f5b301] before:rounded-r-md
-          
-          ${
-            isActive
-              ? "bg-[#f5b301] text-black shadow-md"
-              : "text-black hover:bg-yellow-400/80"
-          }                        
+                        className={`relative flex items-center gap-2.5 px-4 py-6! text-lg! rounded-2xl font-medium transition-all hover:bg-primary!
+                    ${
+                      isActive
+                        ? "bg-primary text-black shadow-md"
+                        : "text-black hover:bg-primary!"
+                    }                        
           `}
                       >
                         <item.icon className="size-6!" />

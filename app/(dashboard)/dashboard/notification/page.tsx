@@ -1,11 +1,31 @@
+import BusinessNotification from "@/components/dashboard/notification/business-notification";
+import NotificationMessage from "@/components/dashboard/notification/notification-message";
+import { NotificationSettings } from "@/components/dashboard/settings/notifications-settings";
+import { Button } from "@/components/ui/button";
+import { CheckCheck } from "lucide-react";
+
 export default function page() {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 font-inter!">
       {/* Header */}
-      <h1 className="text-2xl font-semibold text-gray-800 mb-6">
-        Notifications
-      </h1>
-      
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-2xl font-semibold text-gray-800"> Notifications</h1>
+
+        <Button className="bg-white text-black border border-gray-300 flex items-center gap-2">
+          <CheckCheck size={24} />
+          Mark all as read
+        </Button>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="col-span-2">
+          <NotificationMessage />
+        </div>
+        <div className="col-span-1 space-y-6">
+          <BusinessNotification />
+          <NotificationSettings />
+        </div>
+      </div>
     </div>
   );
 }
