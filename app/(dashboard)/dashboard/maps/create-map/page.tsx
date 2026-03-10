@@ -1,5 +1,6 @@
 "use client";
 
+import { AddCategoryDialog } from "@/components/dashboard/categories/AddCategoryDialog";
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import {
   Car,
@@ -43,6 +44,7 @@ const categories = [
 
 export default function CreateMapPage() {
   const [selectedCategory, setSelectedCategory] = useState("Food & Drinks");
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <APIProvider apiKey={process.env.GOOGLE_MAPS_API_KEY || ""}>
@@ -71,7 +73,10 @@ export default function CreateMapPage() {
                 <Plus size={16} />
                 Add Place (Drop Pin)
               </button>
-              <button className="w-full flex items-center gap-3 px-4 py-2.5 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+              <button
+                onClick={() => setIsDialogOpen(true)}
+                className="w-full flex items-center gap-3 px-4 py-2.5 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              >
                 <Plus size={16} />
                 Add Category
               </button>
@@ -203,6 +208,7 @@ export default function CreateMapPage() {
             </button>
           </div> */}
         </div>
+        <AddCategoryDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
       </div>
     </APIProvider>
   );
