@@ -5,17 +5,7 @@ import BusinessOverview from "@/components/dashboard/business/business-overview"
 import HoursOfOperation from "@/components/dashboard/business/hours-of-operation";
 import LocationVerification from "@/components/dashboard/business/LocationVerification";
 import OwnerInformation from "@/components/dashboard/business/owner-information";
-import PhotosMediaReview from "@/components/dashboard/business/photos-media-Review";
 import PublicContactLinks from "@/components/dashboard/business/public-contact-links";
-import {
-  CheckCircle,
-  ChevronLeft,
-  Clock,
-  Globe,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
 import { useRouter } from "next/navigation";
 
 interface BusinessDetailPageProps {

@@ -1,4 +1,3 @@
-import { MapsTable } from "@/components/dashboard/maps/maps-table";
 import { OffersTable } from "@/components/dashboard/offers/offers-table";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
