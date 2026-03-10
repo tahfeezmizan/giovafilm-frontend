@@ -25,6 +25,7 @@ import {
   Building2,
   BarChart3,
   Settings,
+  LogOut,
 } from "lucide-react";
 
 const menuItems = [
@@ -83,6 +84,10 @@ const menuItems = [
 export function AppSidebar() {
   const pathname = usePathname();
 
+  const handleLogout = () => {
+    console.log("Logout clicked");
+  };
+
   return (
     <Sidebar className="h-screen bg-[#f5f5f5] border-r border-gray-300/50">
       {/* Logo */}
@@ -133,6 +138,23 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+
+      {/* Logout Bottom */}
+      <div className="mt-auto px-2 pb-4">
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <button
+                onClick={handleLogout}
+                className="relative w-full flex items-center gap-2.5 px-4 py-6! text-lg! rounded-2xl font-medium transition-all text-black hover:bg-primary!"
+              >
+                <LogOut className="size-6!" />
+                <span>Logout</span>
+              </button>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </div>
     </Sidebar>
   );
 }
