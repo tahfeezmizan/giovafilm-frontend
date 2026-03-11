@@ -1,0 +1,104 @@
+import { Twitter, Instagram, Globe } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-100 text-gray-600">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* Top Footer */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div>
+            <h2 className="text-xl font-bold text-black tracking-widest">
+              ROADTRIPEADO
+            </h2>
+
+            <p className="mt-4 text-sm leading-relaxed">
+              Curating the world's most authentic travel experiences through
+              interactive, community-driven digital maps.
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex gap-4 mt-6">
+              <div className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 cursor-pointer">
+                <Twitter size={18} />
+              </div>
+
+              <div className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 cursor-pointer">
+                <Instagram size={18} />
+              </div>
+            </div>
+          </div>
+
+          {/* Platform */}
+          <div>
+            <h3 className="text-sm font-semibold text-black tracking-wide mb-4">
+              PLATFORM
+            </h3>
+
+            <ul className="space-y-3 text-sm">
+              <li className="hover:text-black cursor-pointer">Map Catalog</li>
+              <li className="hover:text-black cursor-pointer">How it Works</li>
+              <li className="hover:text-black cursor-pointer">
+                Explorers Stories
+              </li>
+              <li className="hover:text-black cursor-pointer">
+                Affiliate Program
+              </li>
+            </ul>
+          </div>
+
+          {/* Business */}
+          <div>
+            <h3 className="text-sm font-semibold text-black tracking-wide mb-4">
+              FOR BUSINESSES
+            </h3>
+
+            <ul className="space-y-3 text-sm">
+              <li className="hover:text-black cursor-pointer">
+                Add Your Business
+              </li>
+              <li className="hover:text-black cursor-pointer">
+                Partner Dashboard
+              </li>
+              <li className="hover:text-black cursor-pointer">Advertising</li>
+              <li className="hover:text-black cursor-pointer">
+                Success Stories
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-sm font-semibold text-black tracking-wide mb-4">
+              COMPANY
+            </h3>
+
+            <ul className="space-y-3 text-sm">
+              <li className="hover:text-black cursor-pointer">About Us</li>
+              <li className="hover:text-black cursor-pointer">Contact</li>
+              <li className="hover:text-black cursor-pointer">
+                Privacy Policy
+              </li>
+              <li className="hover:text-black cursor-pointer">
+                Terms of Service
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-200 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+          <p>© 2024 Roadtripeado Inc. All rights reserved.</p>
+
+          <div className="flex items-center gap-4 mt-4 md:mt-0">
+            <div className="flex items-center gap-2">
+              <Globe size={16} />
+              English (US)
+            </div>
+            <span>USD</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
