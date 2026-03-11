@@ -1,15 +1,15 @@
 import { Zap } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 export default function HeroBanner() {
   return (
-    <section className="relative min-h-[700px] flex items-center overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden">
       {/* Background Split */}
       <div className="absolute inset-0 flex">
         <div className="w-1/2 bg-[#F9FAFB] relative">
           {/* Diagonal Lines Pattern */}
           <svg
-            className="absolute inset-0 w-full h-full opacity-[0.03]"
+            className="absolute inset-0 w-full h-full opacity-[0.08]"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
           >
