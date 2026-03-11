@@ -5,11 +5,9 @@ import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import {
   Car,
   ChevronRight,
-  Download,
   Edit2,
   History,
   Hotel,
-  Layers,
   Moon,
   Palmtree,
   ParkingCircle,
@@ -17,14 +15,11 @@ import {
   Search,
   ShoppingBag,
   Sparkles,
-  Square,
   Star,
   Target,
   Trees,
-  Utensils,
-  X,
+  Utensils
 } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 
 const categories = [

@@ -1,6 +1,6 @@
 "use client";
 
-import { MAP_CARDS } from "@/components/Common/home-screen";
+import { MAP_CARDS } from "@/components/Common/home-screen2";
 import { ChevronLeft, Info, Play, Share2, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";

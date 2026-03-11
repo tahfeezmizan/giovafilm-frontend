@@ -2,7 +2,6 @@
 
 import { Heart } from "lucide-react";
 import { motion } from "motion/react";
-import { useView } from "../context/view-context";
 import Link from "next/link";
 
 export const MAP_CARDS = [
@@ -57,7 +56,7 @@ export const MAP_CARDS = [
 ];
 
 export const HomeScreen = () => {
-  const { largeView } = useView();
+  // const { largeView } = useView();
 
   return (
     <div className={`flex flex-col min-h-screen`}>
@@ -70,9 +69,7 @@ export const HomeScreen = () => {
         </div>
 
         {/* Grid */}
-        <div
-          className={`grid  ${largeView ? "grid-cols-4" : "grid-cols-2"} gap-4`}
-        >
+        <div className={`grid  grid-cols-4 gap-4`}>
           {MAP_CARDS.map((card) => (
             <motion.div
               key={card.id}
