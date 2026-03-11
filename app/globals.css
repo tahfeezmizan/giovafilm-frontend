@@ -11,6 +11,7 @@
 
   --font-poppins: var(--font-poppins);
   --font-inter: var(--font-inter);
+  --font-public-sans: var(--font-public-sans);
   --font-arial: var(--font-arial);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -57,7 +58,8 @@
 
 body {
   font-family:
-    var(--font-poppins), var(--font-inter), var(--font-arial), sans-serif;
+    var(--font-poppins), var(--font-inter), var(--font-arial),
+    var(--font-public-sans), sans-serif;
 }
 
 :root {

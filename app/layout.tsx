@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, Public_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -13,6 +13,13 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const arial = localFont({
@@ -40,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${inter.variable} ${arial.variable} antialiased`}
+        className={`${poppins.variable} ${inter.variable} ${arial.variable} ${publicSans.variable} antialiased`}
       >
         {children}
       </body>

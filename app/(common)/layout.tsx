@@ -1,3 +1,10 @@
+import Header from "@/components/shared/navigation/header";
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <div>{children}</div>;
+  return (
+    <div>
+      <Header />
+      {children}
+    </div>
+  );
 }

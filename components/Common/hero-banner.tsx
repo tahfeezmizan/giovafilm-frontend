@@ -1,7 +1,125 @@
+import { Zap } from "lucide-react";
+import { Button } from "../ui/button";
+
 export default function HeroBanner() {
   return (
-    <div>
-      <h1>Hero Banner</h1>
-    </div>
+    <section className="relative min-h-[700px] flex items-center overflow-hidden">
+      {/* Background Split */}
+      <div className="absolute inset-0 flex">
+        <div className="w-1/2 bg-[#F9FAFB] relative">
+          {/* Diagonal Lines Pattern */}
+          <svg
+            className="absolute inset-0 w-full h-full opacity-[0.03]"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <line
+              x1="0"
+              y1="100"
+              x2="100"
+              y2="0"
+              stroke="black"
+              strokeWidth="0.1"
+            />
+            <line
+              x1="-20"
+              y1="100"
+              x2="80"
+              y2="0"
+              stroke="black"
+              strokeWidth="0.1"
+            />
+            <line
+              x1="20"
+              y1="100"
+              x2="120"
+              y2="0"
+              stroke="black"
+              strokeWidth="0.1"
+            />
+          </svg>
+        </div>
+        <div className="w-1/2 bg-[#FFFDF5]"></div>
+      </div>
+
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+        {/* Left Content */}
+        <div className="max-w-xl">
+          <p className="text-[#EAB308] font-bold text-sm tracking-[0.2em] mb-6 uppercase">
+            Local Insight, Digital Ease
+          </p>
+          <h1 className="text-6xl md:text-7xl font-black tracking-tight text-gray-900 leading-[1.1] mb-8">
+            Discover Cities <br />
+            <span className="text-[#FFC107]">Like a Local</span>
+          </h1>
+          <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-lg">
+            Buy curated digital maps packed with local places, hidden gems, and
+            exclusive offers — all in one interactive experience.
+          </p>
+
+          <div className="flex flex-wrap gap-4 mb-12">
+            <Button className="bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold rounded-xl px-10 h-14 text-base shadow-lg shadow-yellow-500/20">
+              Explore Maps
+            </Button>
+            <Button
+              variant="outline"
+              className="bg-white hover:bg-gray-50 text-black font-bold rounded-xl px-10 h-14 text-base border-none shadow-xl shadow-black/5"
+            >
+              Browse Catalog
+            </Button>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="flex -space-x-3">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden"
+                >
+                  <img
+                    src={`https://picsum.photos/seed/user${i}/100/100`}
+                    alt="User"
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="text-sm font-medium text-gray-500">
+              Joined by{" "}
+              <span className="text-black font-bold">10k+ explorers</span> this
+              month
+            </p>
+          </div>
+        </div>
+
+        {/* Right Content - Image & Floating Card */}
+        <div className="relative">
+          <div className="relative rounded-[40px] overflow-hidden shadow-2xl transform lg:translate-x-12">
+            <img
+              src="https://picsum.photos/seed/tokyo-street/1200/800"
+              alt="Tokyo Street"
+              className="w-full h-auto object-cover aspect-4/3"
+              referrerPolicy="no-referrer"
+            />
+
+            {/* Floating Card */}
+            <div className="absolute bottom-8 -left-8 bg-white p-4 rounded-2xl shadow-2xl flex items-center gap-4 min-w-[280px] animate-bounce-slow">
+              <div className="w-12 h-12 bg-[#FFC107] rounded-xl flex items-center justify-center text-black">
+                <Zap size={24} fill="currentColor" />
+              </div>
+              <div>
+                <h4 className="font-black text-gray-900 leading-tight">
+                  New: Tokyo Guide
+                </h4>
+                <p className="text-sm text-gray-500 font-medium">
+                  50+ Hidden Gems added
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

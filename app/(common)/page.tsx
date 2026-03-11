@@ -1,35 +1,9 @@
-import { HomeScreen } from "@/components/Common/home-screen2";
-import React from "react";
+import HeroBanner from "@/components/Common/hero-banner";
 
 export default function page() {
-  return <div>adsfasdfadfdasf</div>;
+  return (
+    <div>
+      <HeroBanner />
+    </div>
+  );
 }
-
-// "use client";
-
-// import { HomeScreen } from "@/components/Common/home-screen";
-// import { AnimatePresence, motion } from "motion/react";
-// import { useState } from "react";
-
-// // --- Main App ---
-
-// export default function App() {
-//   return (
-//     <div className="min-h-screen  flex justify-center overflow-x-hidden">
-//       {/* Mobile Container */}
-//       <div className="min-h-screen relative overflow-hidden">
-//         <AnimatePresence mode="wait">
-//           <motion.div
-//             initial={{ opacity: 0, x: 20 }}
-//             animate={{ opacity: 1, x: 0 }}
-//             exit={{ opacity: 0, x: -20 }}
-//             transition={{ duration: 0.3, ease: "easeInOut" }}
-//             className="w-full h-full"
-//           >
-//             <HomeScreen />
-//           </motion.div>
-//         </AnimatePresence>
-//       </div>
-//     </div>
-//   );
-// }
