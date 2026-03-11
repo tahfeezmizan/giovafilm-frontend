@@ -30,10 +30,10 @@ const steps: Step[] = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-14">
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
           How It Works
         </h2>
 
@@ -42,7 +42,7 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <Card
               key={index}
-              className="border-gray-200 shadow-sm hover:shadow-md transition rounded-2xl"
+              className="border-gray-100 shadow-none hover:shadow-md transition rounded-2xl py-2"
             >
               <CardContent className="flex flex-col items-center text-center p-10 space-y-4">
                 {/* Icon */}

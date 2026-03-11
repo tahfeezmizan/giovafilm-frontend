@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Filter, Eye, Heart, Navigation } from "lucide-react";
 
@@ -25,13 +27,13 @@ export default function ExploreMaps() {
     <section className="bg-[#0f0f0f] text-white py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         {/* Map Image */}
-        <div className="w-[500px] h-[500px] relative rounded-3xl p-4 bg-blue-900/30">
+        <div className="w-135 h-135 relative rounded-3xl p-4 bg-blue-900/30">
           <div className=" rounded-2xl overflow-hidden">
             <Image
               src={require("@/public/explore-maps.png")}
               alt="Interactive Map"
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -39,9 +41,11 @@ export default function ExploreMaps() {
 
         {/* Content */}
         <div className="space-y-6">
-          <h2 className="text-4xl font-bold">Explore With Interactive Maps</h2>
+          <h2 className="text-4xl font-inter font-bold">
+            Explore With Interactive Maps
+          </h2>
 
-          <p className="text-gray-400 leading-relaxed">
+          <p className="text-base font-inter text-gray-400 leading-relaxed">
             Our dynamic platform transforms a static map into a powerful
             exploration tool. Real-time data and community insights ensure you
             never miss a beat.

@@ -1,9 +1,12 @@
+"use client";
+
 import { Zap } from "lucide-react";
 import { Button } from "../../ui/button";
+import Image from "next/image";
 
 export default function HeroBanner() {
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden font-inter">
       {/* Background Split */}
       <div className="absolute inset-0 flex">
         <div className="w-1/2 bg-[#F9FAFB] relative">
@@ -42,13 +45,13 @@ export default function HeroBanner() {
         <div className="w-1/2 bg-[#FFFDF5]"></div>
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="relative z-10 max-w-360 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
         {/* Left Content */}
         <div className="max-w-xl">
-          <p className="text-[#EAB308] font-bold text-sm tracking-[0.2em] mb-6 uppercase">
+          <p className="text-primary font-bold font-inter text-sm tracking-[0.2em] mb-4 leading-4 uppercase">
             Local Insight, Digital Ease
           </p>
-          <h1 className="text-6xl md:text-7xl font-black tracking-tight text-gray-900 leading-[1.1] mb-8">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-20 mb-4">
             Discover Cities <br />
             <span className="text-[#FFC107]">Like a Local</span>
           </h1>
@@ -58,12 +61,12 @@ export default function HeroBanner() {
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">
-            <Button className="bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold rounded-xl px-10 h-14 text-base shadow-lg shadow-yellow-500/20">
+            <Button className="bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold rounded-lg px-10 h-14 text-base shadow-lg shadow-yellow-500/20">
               Explore Maps
             </Button>
             <Button
               variant="outline"
-              className="bg-white hover:bg-gray-50 text-black font-bold rounded-xl px-10 h-14 text-base border-none shadow-xl shadow-black/5"
+              className="bg-white hover:bg-gray-50 text-black font-bold rounded-lg px-10 h-14 text-base border-none shadow-xl shadow-black/5"
             >
               Browse Catalog
             </Button>
@@ -76,9 +79,11 @@ export default function HeroBanner() {
                   key={i}
                   className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden"
                 >
-                  <img
+                  <Image
                     src={`https://picsum.photos/seed/user${i}/100/100`}
                     alt="User"
+                    width={500}
+                    height={500}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
@@ -96,26 +101,26 @@ export default function HeroBanner() {
         {/* Right Content - Image & Floating Card */}
         <div className="relative">
           <div className="relative rounded-[40px] overflow-hidden shadow-2xl transform lg:translate-x-12">
-            <img
-              src="https://picsum.photos/seed/tokyo-street/1200/800"
+            <Image
+              src={require("@/public/hero-banner.png")}
               alt="Tokyo Street"
+              width={500}
+              height={400}
               className="w-full h-auto object-cover aspect-4/3"
               referrerPolicy="no-referrer"
             />
+          </div>
 
-            {/* Floating Card */}
-            <div className="absolute bottom-8 -left-8 bg-white p-4 rounded-2xl shadow-2xl flex items-center gap-4 min-w-[280px] animate-bounce-slow">
-              <div className="w-12 h-12 bg-[#FFC107] rounded-xl flex items-center justify-center text-black">
-                <Zap size={24} fill="currentColor" />
-              </div>
-              <div>
-                <h4 className="font-black text-gray-900 leading-tight">
-                  New: Tokyo Guide
-                </h4>
-                <p className="text-sm text-gray-500 font-medium">
-                  50+ Hidden Gems added
-                </p>
-              </div>
+          {/* Floating Card */}
+          <div className="absolute -bottom-6 left-4 bg-white font-inter p-4 rounded-xl shadow-2xl flex items-center gap-4 min-w-70 animate-bounce-slow">
+            <div className="w-12 h-12 bg-[#FFC107] rounded-lg flex items-center justify-center text-black">
+              <Zap size={24} fill="currentColor" />
+            </div>
+            <div>
+              <h4 className="font-black  text-gray-900 leading-tight">
+                New: Tokyo Guide
+              </h4>
+              <p className="text-sm  text-[#6B7280]">50+ Hidden Gems added</p>
             </div>
           </div>
         </div>
