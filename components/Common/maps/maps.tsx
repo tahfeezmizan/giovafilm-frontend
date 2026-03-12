@@ -4,7 +4,57 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import { MAP_CARDS } from "../home-screen2";
+
+export const MAP_CARDS = [
+  {
+    id: 1,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
+  },
+  {
+    id: 2,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1772289935663-80aa987be656?q=80&w=1170",
+  },
+  {
+    id: 3,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1693707994429-95caaceab2a4?q=80&w=1074",
+  },
+  {
+    id: 4,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1772289935663-80aa987be656?q=80&w=1170",
+  },
+  {
+    id: 5,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=400",
+  },
+  {
+    id: 6,
+    title: "Rome Historic Center Walking Tour",
+    subtitle: "Professional Guide",
+    price: "$9.99",
+    image:
+      "https://images.unsplash.com/photo-1693707994429-95caaceab2a4?q=80&w=1074",
+  },
+];
 
 export default function Maps() {
   return (
@@ -57,7 +107,7 @@ export default function Maps() {
                   <span className="text-xl font-bold text-[#1A1A1A] block mb-2">
                     {card.price}
                   </span>
-                  <Link href={`/details/${card.id}`}>
+                  <Link href={`/maps/${card.id}`}>
                     <Button className="w-full text-black py-6 px-13.5 text-lg bg-primary/80 hover:bg-primary font-bold rounded-lg transition-colors shadow-sm cursor-pointer">
                       Buy Now
                     </Button>
