@@ -11,7 +11,7 @@ export default function page() {
         <h1 className="text-2xl font-semibold text-gray-800">Maps</h1>
 
         <Link href="/dashboard/maps/create-map">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2">
+          <Button className="bg-primary/80 hover:bg-primary text-black flex items-center gap-2">
             <Plus size={16} />
             Create New Map
           </Button>

@@ -17,7 +17,7 @@ export default function Page() {
         </div>
         <button
           onClick={() => setIsDialogOpen(true)}
-          className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium"
+          className="flex items-center gap-2 bg-primary/80 px-4 py-2 rounded-lg hover:bg-primary transition-colors font-medium"
         >
           <Plus size={20} />
           Add Categories

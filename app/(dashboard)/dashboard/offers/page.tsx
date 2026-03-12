@@ -16,7 +16,7 @@ export default function page() {
 
         <Button
           onClick={() => setOpen(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2"
+          className="bg-primary/80 hover:bg-primary text-black flex items-center gap-2"
         >
           <Plus size={20} />
           Create Offers

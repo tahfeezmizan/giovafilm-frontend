@@ -36,25 +36,16 @@ const arial = localFont({
 export const metadata: Metadata = {
   title:
     "Roadtripeado – Discover Cities Like a Local | Interactive Travel Maps",
-
   description:
     "Discover cities like a local with curated interactive travel maps. Explore hidden gems, exclusive local deals, and authentic experiences through Roadtripeado.",
-
   keywords: [
     "travel maps",
-
     "interactive city maps",
-
     "discover cities",
-
     "hidden gems travel",
-
     "local city guides",
-
     "tourist maps",
-
     "travel planning",
-
     "city exploration",
   ],
 
@@ -62,24 +53,17 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Discover Cities Like a Local – Roadtripeado",
-
     description:
       "Explore curated interactive travel maps, hidden gems, and exclusive local experiences. Travel smarter with Roadtripeado.",
-
     url: "https://roadtripeado.com",
-
     siteName: "Roadtripeado",
-
     locale: "en_US",
-
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-
     title: "Discover Cities Like a Local – Roadtripeado",
-
     description:
       "Interactive travel maps to discover hidden gems and authentic local experiences in cities around the world.",
   },

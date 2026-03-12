@@ -12,7 +12,7 @@ export default function page() {
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-semibold text-gray-800">Users & Roles</h1>
 
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2">
+        <Button className="bg-primary/80 hover:bg-primary/80 text-black flex items-center gap-2">
           <Plus size={16} />
           Invite User
         </Button>

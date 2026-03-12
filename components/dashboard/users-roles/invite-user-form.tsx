@@ -67,7 +67,7 @@ export function InviteUserForm(): React.ReactElement {
             name="role"
             value={formData.role}
             onChange={handleInputChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white"
           >
             <option value="">Select a role</option>
             <option value="owner">Owner</option>
@@ -84,7 +84,7 @@ export function InviteUserForm(): React.ReactElement {
         </Button>
         <Button
           onClick={handleSubmit}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6"
+          className="bg-primary/80 hover:bg-primary text-black px-6"
         >
           Send Invitation
         </Button>
