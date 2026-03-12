@@ -1,4 +1,3 @@
-import { MapsTable } from "@/components/dashboard/maps/maps-table";
 import { InviteUserForm } from "@/components/dashboard/users-roles/invite-user-form";
 import { RolePermissions } from "@/components/dashboard/users-roles/role-permissions";
 import { UsersTable } from "@/components/dashboard/users-roles/users-table";
