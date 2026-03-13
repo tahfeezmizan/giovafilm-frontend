@@ -11,7 +11,7 @@ import StartExploring from "@/components/Common/landing-page/start-exploring";
 export default function page() {
   return (
     <div>
-      <HeroBanner />      
+      <HeroBanner />
       <HowItWorks />
       <Features />
       <ExploreMaps />

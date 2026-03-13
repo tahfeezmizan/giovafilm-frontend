@@ -30,7 +30,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       {/* Curved Background Shape */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-full h-full bg-[#FFFDF5] clip-path-hero"></div>
@@ -39,10 +39,10 @@ export function Features() {
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* Left Content */}
         <div>
-          <h2 className="text-5xl font-black text-gray-900 leading-tight mb-6">
+          <h2 className="text-4xl font-inter font-bold text-gray-900 leading-tight mb-6">
             What You Get Inside Every Map
           </h2>
-          <p className="text-lg text-gray-500 leading-relaxed mb-12 max-w-lg">
+          <p className="text-gray-500 leading-relaxed mb-12 max-w-lg">
             Every digital map is hand-crafted to provide the ultimate urban
             exploration experience, far beyond what simple GPS apps offer.
           </p>
@@ -51,7 +51,7 @@ export function Features() {
             {features.map((feature) => (
               <div key={feature.title} className="flex items-start gap-4">
                 <div
-                  className={`${feature.color} p-2 rounded-lg text-black shrink-0`}
+                  className={`${feature.color} p-2 rounded-lg text-white shrink-0`}
                 >
                   <feature.icon size={20} fill="currentColor" />
                 </div>
@@ -69,9 +69,9 @@ export function Features() {
         </div>
 
         {/* Right Content - Image Grid */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <div className="rounded-[32px] overflow-hidden shadow-lg">
+        <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-6">
+            <div className="h-[256px] rounded-[32px] overflow-hidden shadow-lg">
               <img
                 src="https://picsum.photos/seed/night-city/600/600"
                 alt="Night City"
@@ -79,7 +79,7 @@ export function Features() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="rounded-[32px] overflow-hidden shadow-lg">
+            <div className="h-[300px] rounded-[32px] overflow-hidden shadow-lg">
               <img
                 src="https://picsum.photos/seed/coffee/600/600"
                 alt="Coffee"
@@ -88,16 +88,16 @@ export function Features() {
               />
             </div>
           </div>
-          <div className="space-y-4 pt-12">
-            <div className="rounded-[32px] overflow-hidden shadow-lg">
+          <div className="space-y-6 pt-12">
+            <div className="h-[320px] rounded-[32px] overflow-hidden shadow-lg">
               <img
                 src="https://picsum.photos/seed/alley/600/800"
                 alt="Alley"
-                className="w-full h-full object-cover aspect-[3/4]"
+                className="w-full h-full object-cover aspect-3/4"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="rounded-[32px] overflow-hidden shadow-lg">
+            <div className="h-[280px] rounded-[32px] overflow-hidden shadow-lg">
               <img
                 src="https://picsum.photos/seed/interior/600/600"
                 alt="Interior"
