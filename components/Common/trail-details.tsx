@@ -10,6 +10,11 @@ import {
   BarChart3,
   Timer,
   Send,
+  Toilet,
+  Building2,
+  Utensils,
+  Star,
+  MessageSquare,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -19,6 +24,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export default function TrailDetails() {
   return (
@@ -100,13 +106,19 @@ export default function TrailDetails() {
 
       {/* ACCORDIONS */}
       <div className="mt-10 space-y-4">
-        <Accordion type="single" collapsible defaultValue="access">
-          <AccordionItem value="access">
-            <AccordionTrigger className="text-left font-semibold">
+        <Accordion
+          type="single"
+          collapsible
+          defaultValue="access"
+          className="space-y-4"
+        >
+          {/* ACCESS */}
+          <AccordionItem value="access" className="border rounded-xl px-6">
+            <AccordionTrigger className="font-semibold">
               ACCESS
             </AccordionTrigger>
 
-            <AccordionContent className="text-muted-foreground space-y-4">
+            <AccordionContent className="text-muted-foreground space-y-4 pb-6">
               <p>
                 Arrival: Reach the trail using the main entrance of Glacier
                 National Park. The trail head is located near the North visitor
@@ -127,30 +139,184 @@ export default function TrailDetails() {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="recommendation">
-            <AccordionTrigger>RECOMMENDATION</AccordionTrigger>
+          {/* RECOMMENDATIONS */}
+          <AccordionItem
+            value="recommendations"
+            className="border rounded-xl px-6"
+          >
+            <AccordionTrigger className="font-semibold">
+              RECOMMENDATIONS
+            </AccordionTrigger>
 
-            <AccordionContent>
-              Bring enough water, proper hiking shoes, and start early in the
-              morning to avoid crowds and heat.
+            <AccordionContent className="pb-6 space-y-5">
+              <p className="text-muted-foreground">
+                Bring a reusable water bottle, comfortable shoes, and light
+                clothing. Don't forget your camera to capture the spectacular
+                scenery!
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                {[
+                  "Mosquito repellent",
+                  "Hiking boots",
+                  "Flashlight",
+                  "Sunscreen",
+                  "Rain jacket",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="text-sm bg-orange-50 text-orange-600 px-4 py-1.5 rounded-full border border-orange-200"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="services">
-            <AccordionTrigger>SERVICES</AccordionTrigger>
+          {/* SERVICES */}
+          <AccordionItem value="services" className="border rounded-xl px-6">
+            <AccordionTrigger className="font-semibold">
+              SERVICES
+            </AccordionTrigger>
 
-            <AccordionContent>
-              Visitor center, parking area, restrooms, and picnic spots are
-              available near the trail entrance.
+            <AccordionContent className="pb-8">
+              <div className="grid grid-cols-3 gap-8 text-center">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="bg-gray-100 p-4 rounded-full">
+                    <Toilet size={22} />
+                  </div>
+
+                  <p className="text-sm font-semibold text-muted-foreground">
+                    RESTROOMS
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center gap-3">
+                  <div className="bg-gray-100 p-4 rounded-full">
+                    <Building2 size={22} />
+                  </div>
+
+                  <p className="text-sm font-semibold text-muted-foreground">
+                    VISITOR CENTER
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center gap-3">
+                  <div className="bg-gray-100 p-4 rounded-full">
+                    <Utensils size={22} />
+                  </div>
+
+                  <p className="text-sm font-semibold text-muted-foreground">
+                    CAFETERIA
+                  </p>
+                </div>
+              </div>
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="reviews">
-            <AccordionTrigger>REVIEWS</AccordionTrigger>
+          {/* REVIEWS */}
+          <AccordionItem
+            value="reviews"
+            className="border rounded-xl overflow-hidden"
+          >
+            <AccordionTrigger className="px-6 py-4 font-semibold bg-yellow-50 text-yellow-700">
+              REVIEWS
+            </AccordionTrigger>
 
-            <AccordionContent>
-              Visitors love the stunning mountain views and peaceful lake at the
-              end of the trail.
+            <AccordionContent className="px-6 pb-6 space-y-6">
+              {/* Rating summary */}
+              <div className="flex items-center gap-3">
+                <h3 className="text-3xl font-bold">4.8</h3>
+
+                <div className="flex text-yellow-500">
+                  {Array(5)
+                    .fill(0)
+                    .map((_, i) => (
+                      <Star key={i} size={18} fill="currentColor" />
+                    ))}
+                </div>
+
+                <p className="text-sm text-muted-foreground">
+                  Based on 124 reviews
+                </p>
+              </div>
+
+              {/* REVIEW 1 */}
+              <div className="flex gap-4">
+                <Avatar>
+                  <AvatarImage src="/avatar.png" />
+                  <AvatarFallback>M</AvatarFallback>
+                </Avatar>
+
+                <div className="flex-1 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-semibold">Marcus Chen</p>
+                      <p className="text-xs text-muted-foreground">
+                        2 DAYS AGO
+                      </p>
+                    </div>
+
+                    <div className="flex text-yellow-500">
+                      {Array(5)
+                        .fill(0)
+                        .map((_, i) => (
+                          <Star key={i} size={16} fill="currentColor" />
+                        ))}
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground">
+                    Absolutely stunning views! The hike was moderately
+                    challenging but well worth it when you reach the
+                    crystal-clear water at the top. Highly recommend arriving
+                    early.
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t"></div>
+
+              {/* REVIEW 2 */}
+              <div className="flex gap-4">
+                <Avatar>
+                  <AvatarImage src="/avatar.png" />
+                  <AvatarFallback>S</AvatarFallback>
+                </Avatar>
+
+                <div className="flex-1 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-semibold">Sarah Jenkins</p>
+                      <p className="text-xs text-muted-foreground">
+                        1 WEEK AGO
+                      </p>
+                    </div>
+
+                    <div className="flex text-yellow-500">
+                      {Array(4)
+                        .fill(0)
+                        .map((_, i) => (
+                          <Star key={i} size={16} fill="currentColor" />
+                        ))}
+                      <Star size={16} />
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground">
+                    The trail was well-marked. A bit crowded on the weekend but
+                    the scenery is spectacular. Don't forget to bring plenty of
+                    water!
+                  </p>
+                </div>
+              </div>
+
+              {/* Button */}
+              <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-6 rounded-xl mt-6">
+                <MessageSquare size={18} className="mr-2" />
+                WRITE A REVIEW
+              </Button>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
