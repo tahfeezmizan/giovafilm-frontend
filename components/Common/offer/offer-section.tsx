@@ -1,15 +1,22 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import { Heart, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+import image1 from "@/public/offers-image/Bella Cucina.png";
+import image2 from "@/public/offers-image/Urban Threads.png";
+import image3 from "@/public/offers-image/The Daily Grind.png";
+import image4 from "@/public/offers-image/L'Escale.png";
+import image5 from "@/public/offers-image/Prime Cut.png";
+import image6 from "@/public/offers-image/Gourmet Garden.png";
 
 type Offer = {
   id: number;
   title: string;
   category: string;
-  image: string;
+  image: StaticImageData | string;
   discount: number;
 };
 
@@ -18,42 +25,42 @@ const offers: Offer[] = [
     id: 1,
     title: "Bella Cucina",
     category: "Restaurant",
-    image: "/offers/restaurant.jpg",
+    image: image1,
     discount: 15,
   },
   {
     id: 2,
     title: "Urban Threads",
     category: "Modern Boutique",
-    image: "/offers/boutique.jpg",
+    image: image2,
     discount: 10,
   },
   {
     id: 3,
     title: "The Daily Grind",
     category: "Coffee & Bakery",
-    image: "/offers/coffee.jpg",
+    image: image3,
     discount: 10,
   },
   {
     id: 4,
     title: "L’Escale",
     category: "French Fine Dining",
-    image: "/offers/french.jpg",
+    image: image4,
     discount: 15,
   },
   {
     id: 5,
     title: "Prime Cut",
     category: "Premium Steakhouse",
-    image: "/offers/steak.jpg",
+    image: image5,
     discount: 15,
   },
   {
     id: 6,
     title: "Gourmet Garden",
     category: "Farm to Table",
-    image: "/offers/garden.jpg",
+    image: image6,
     discount: 15,
   },
 ];
@@ -97,7 +104,7 @@ export default function OfferSection() {
                 className="group rounded-xl overflow-hidden border bg-white hover:shadow-md transition"
               >
                 {/* Image */}
-                <div className="relative h-52 w-full">
+                <div className="relative h-64 w-full">
                   <Image
                     src={offer.image}
                     alt={offer.title}

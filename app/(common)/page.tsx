@@ -7,13 +7,11 @@ import MapCollection from "@/components/Common/landing-page/map-collection";
 import PersonalizedExperience from "@/components/Common/landing-page/personalized-experience";
 import PromoteBusiness from "@/components/Common/landing-page/promote-business";
 import StartExploring from "@/components/Common/landing-page/start-exploring";
-import TrailDetails from "@/components/Common/trail-details";
 
 export default function page() {
   return (
     <div>
-      <HeroBanner />
-      <TrailDetails />
+      <HeroBanner />      
       <HowItWorks />
       <Features />
       <ExploreMaps />

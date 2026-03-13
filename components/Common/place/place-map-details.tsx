@@ -24,9 +24,9 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 
-export default function TrailDetails() {
+export default function PlaceMapDetails() {
   return (
     <section className="max-w-[1400px] mx-auto px-6 py-10">
       {/* TOP GRID */}
