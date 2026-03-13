@@ -1,4 +1,4 @@
-import PlaceMapDetails from "@/components/Common/place/place-map-details";
+import PlaceMapDetails from "@/components/Common/maps/map-details";
 
 export default function page() {
   return (

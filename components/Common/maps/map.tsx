@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const markers = [
+export const markers = [
   {
     id: 1,
     top: "20%",
@@ -109,7 +109,7 @@ const markers = [
   },
 ];
 
-export default function PlaceMapPage() {
+export default function MapPage() {
   const [selectedLocation, setSelectedLocation] = useState<
     (typeof markers)[0] | null
   >(null);
@@ -189,11 +189,14 @@ export default function PlaceMapPage() {
                 </p>
 
                 <div className="flex items-center gap-3">
-                  <Button className="flex-1 bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold rounded-xl h-12 shadow-none cursor-pointer">
-                    <Link href={`/places/${selectedLocation.id}`}>
+                  <Link
+                    className="flex-1"
+                    href={`/maps/${selectedLocation.id}`}
+                  >
+                    <Button className=" w-full bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold rounded-xl h-12 shadow-none cursor-pointer">
                       View Details
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                   <Button
                     variant="outline"
                     className="w-12 h-12 p-0 rounded-xl border-gray-200 hover:bg-gray-50"

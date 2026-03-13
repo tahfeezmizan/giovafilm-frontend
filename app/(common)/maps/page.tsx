@@ -1,9 +1,9 @@
-import Maps from "@/components/Common/maps/maps";
+import MapPage from "@/components/Common/maps/map";
 
 export default function page() {
   return (
     <div>
-      <Maps />
+      <MapPage />
     </div>
   );
 }

@@ -1,9 +1,9 @@
-import MapDetailPage from "@/components/Common/maps/map-detail-page";
+import MapDetails from "@/components/Common/maps/map-details";
 
 export default function page() {
   return (
     <div>
-      <MapDetailPage />
+      <MapDetails />
     </div>
   );
 }

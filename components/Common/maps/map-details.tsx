@@ -1,52 +1,64 @@
 "use client";
 
-import Image from "next/image";
 import {
-  Heart,
-  Share2,
-  MapPin,
-  Clock,
-  Ticket,
   BarChart3,
-  Timer,
-  Send,
-  Toilet,
   Building2,
-  Utensils,
-  Star,
+  Clock,
+  Heart,
+  MapPin,
   MessageSquare,
+  Send,
+  Share2,
+  Star,
+  Ticket,
+  Timer,
+  Toilet,
+  Utensils,
 } from "lucide-react";
+import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { useParams } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
+import { markers } from "./map";
 
-export default function PlaceMapDetails() {
+export default function MapDetails() {
+  const params = useParams();
+  const id = Number(params?.id);
+  console.log(id);
+
+  const marker = markers.find((marker) => marker.id === id);
+
+  console.log(marker);
+
   return (
     <section className="max-w-[1400px] mx-auto px-6 py-10">
       {/* TOP GRID */}
       <div className="grid lg:grid-cols-3 gap-6">
         {/* LEFT HERO CARD */}
         <div className="lg:col-span-2 relative rounded-xl overflow-hidden">
-          <Image
-            src="/trail.jpg"
-            alt="Crystal Lake Trail"
-            width={1200}
-            height={700}
-            className="object-cover w-full h-[360px]"
-          />
+          <div className="h-[400px] object-cover">
+            <Image
+              src={marker?.image}
+              alt={marker?.name}
+              width={1000}
+              height={1000}
+              className="object-cover w-full! h-full"
+            />
+          </div>
 
           {/* overlay */}
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
 
           {/* favorite */}
-          <button className="absolute top-5 left-5 bg-white/80 backdrop-blur p-2 rounded-lg">
-            <Heart className="size-5" />
+          <button className="absolute top-5 left-5 bg-white/40 backdrop-blur p-4 rounded-lg">
+            <Heart className="size-6" />
           </button>
 
           {/* share */}
@@ -57,11 +69,13 @@ export default function PlaceMapDetails() {
 
           {/* title */}
           <div className="absolute bottom-6 left-6 text-white">
-            <h1 className="text-4xl font-bold">Crystal Lake Trail</h1>
+            <h1 className="text-5xl font-bold font-public-sans">
+              {marker?.name}
+            </h1>
 
-            <div className="flex items-center gap-2 mt-2 text-sm">
-              <MapPin size={16} />
-              Glacier National Park, MT
+            <div className="flex items-center gap-2 mt-2 text-lg">
+              <MapPin size={16} className="text-[#EC5B13]" />
+              {marker?.type}
             </div>
           </div>
         </div>
