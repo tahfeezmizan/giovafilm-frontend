@@ -33,7 +33,7 @@ const deals: Deal[] = [
 export default function DealsSection() {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto text-center space-y-10">
+      <div className="max-w-6xl mx-auto px-6 text-center space-y-10">
         {/* Heading */}
         <div className="space-y-3">
           <h2 className="text-3xl font-bold">Unlock Exclusive Local Deals</h2>

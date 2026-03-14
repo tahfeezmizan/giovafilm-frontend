@@ -43,10 +43,20 @@ export default function MapDetails() {
       <div className="grid lg:grid-cols-3 gap-6">
         {/* LEFT HERO CARD */}
         <div className="lg:col-span-2 relative rounded-xl overflow-hidden">
-          <div className="h-[400px] object-cover">
+          {/* <div className="h-[400px] object-cover">
             <Image
               src={marker?.image}
               alt={marker?.name}
+              width={1000}
+              height={1000}
+              className="object-cover w-full! h-full"
+            />
+          </div> */}
+
+          <div className="h-100 object-cover">
+            <Image
+              src={marker?.image || "/placeholder-image.jpg"} // Add a default image
+              alt={marker?.name || "Image"} // Also provide fallback for alt
               width={1000}
               height={1000}
               className="object-cover w-full! h-full"

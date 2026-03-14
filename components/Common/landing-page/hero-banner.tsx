@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function HeroBanner() {
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden font-inter">
+    <section className="relative min-h-[80vh] py-16 flex items-center overflow-hidden font-inter">
       {/* Background Split */}
       <div className="absolute inset-0 flex">
         <div className="w-1/2 bg-[#F9FAFB] relative">
