@@ -133,7 +133,7 @@ export default function Header() {
                       </DropdownMenuItem>
                     </Link>
 
-                    <Link href={"/profile/favorite-places"}>
+                    <Link href={"/profile/purchased-maps"}>
                       <DropdownMenuItem className="px-4 py-3 cursor-pointer">
                         <Map className="mr-3 size-5" />
                         Purchased Maps
