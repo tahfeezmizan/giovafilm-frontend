@@ -56,7 +56,7 @@ export const MAP_CARDS = [
   },
 ];
 
-export default function Maps() {
+export default function FeaturedMaps() {
   return (
     <div className="bg-gray-50 py-10 font-inter">
       <div className="max-w-360 mx-auto px-6">
@@ -107,7 +107,7 @@ export default function Maps() {
                   <span className="text-xl font-bold text-[#1A1A1A] block mb-2">
                     {card.price}
                   </span>
-                  <Link href={`/maps/${card.id}`}>
+                  <Link href={`/catalog/${card.id}`}>
                     <Button className="w-full text-black py-6 px-13.5 text-lg bg-primary/80 hover:bg-primary font-bold rounded-lg transition-colors shadow-sm cursor-pointer">
                       Buy Now
                     </Button>

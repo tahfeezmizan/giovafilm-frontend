@@ -52,9 +52,11 @@ const MAPS_DATA: Record<number, MapDetail> = {
   },
 };
 
-export default function MapDetailPage() {
+export default function FeatureMapDetailPage() {
   const params = useParams();
   const id = parseInt(params.id as string);
+
+  console.log(id);
   const map = MAPS_DATA[id] || MAPS_DATA[1];
   const [mainImage, setMainImage] = useState(map.mainImage);
 
