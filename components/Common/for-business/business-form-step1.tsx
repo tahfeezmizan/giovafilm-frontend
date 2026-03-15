@@ -42,9 +42,8 @@ export function BusinessFormStep1({ form }: BusinessFormStep1Props) {
       {/* Public Information Section */}
       <div className="space-y-4">
         <div className="flex items-center gap-2 mb-4">
-        
-            <Earth className="size-4" />
-        
+          <Earth className="size-4" />
+
           <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
             PUBLIC INFORMATION
           </h3>
@@ -62,6 +61,7 @@ export function BusinessFormStep1({ form }: BusinessFormStep1Props) {
                 <Input
                   placeholder="e.g. Sunset Peak Lodge"
                   {...field}
+                  type="text"
                   className="bg-gray-50 border-gray-200"
                 />
               </FormControl>
@@ -75,11 +75,11 @@ export function BusinessFormStep1({ form }: BusinessFormStep1Props) {
           name="category"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-gray-900 font-semibold">
+              <FormLabel className="text-gray-900 font-semibold ">
                 Category
               </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
+                <FormControl className="w-full">
                   <SelectTrigger className="bg-gray-50 border-gray-200">
                     <SelectValue placeholder="Select a category" />
                   </SelectTrigger>
@@ -140,6 +140,7 @@ export function BusinessFormStep1({ form }: BusinessFormStep1Props) {
                   <Input
                     placeholder="+1 (555) 000-0000"
                     {...field}
+                    type="number"
                     className="bg-gray-50 border-gray-200"
                   />
                 </FormControl>
@@ -160,6 +161,7 @@ export function BusinessFormStep1({ form }: BusinessFormStep1Props) {
                   <Input
                     placeholder="https://yourwebsite.com"
                     {...field}
+                    type="url"
                     className="bg-gray-50 border-gray-200"
                   />
                 </FormControl>

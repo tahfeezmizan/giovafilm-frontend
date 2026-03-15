@@ -80,55 +80,6 @@ export function AddBusinessForm() {
       try {
         console.log("[v0] ===== BUSINESS FORM SUBMISSION =====");
         console.log("[v0] Form Data:", data);
-        console.log("[v0] Step 1 - Public Information:");
-        console.log("[v0]   Business Name:", data.businessName);
-        console.log("[v0]   Category:", data.category);
-        console.log("[v0]   Description:", data.businessDescription);
-        console.log("[v0]   Phone:", data.phoneNumber);
-        console.log("[v0]   Website:", data.website);
-        console.log("[v0]   Instagram:", data.instagram);
-        console.log("[v0] Step 1 - Location:");
-        console.log("[v0]   Address:", data.streetAddress);
-        console.log("[v0]   City:", data.city);
-        console.log("[v0]   Country:", data.country);
-        console.log("[v0] Step 1 - Hours:");
-        console.log(
-          "[v0]   Mon-Fri:",
-          `${data.hoursMonFriStart} - ${data.hoursMonFriEnd}`,
-        );
-        console.log(
-          "[v0]   Sat-Sun:",
-          `${data.hoursSatSunStart} - ${data.hoursSatSunEnd}`,
-        );
-        console.log("[v0] Step 2 - Media:");
-        console.log(
-          "[v0]   Business Photos:",
-          businessPhotos.length > 0
-            ? businessPhotos.map((f) => f.name)
-            : "None uploaded",
-        );
-        console.log(
-          "[v0]   Menu File:",
-          menuFile ? menuFile.name : "None uploaded",
-        );
-        console.log("[v0] Step 3 - Offer:");
-        console.log("[v0]   Title:", data.offerTitle || "Not provided");
-        console.log(
-          "[v0]   Description:",
-          data.offerDescription || "Not provided",
-        );
-        console.log(
-          "[v0]   Discount:",
-          data.offerDiscount ? data.offerDiscount + "%" : "Not provided",
-        );
-        console.log(
-          "[v0]   Valid Until:",
-          data.offerValidUntil || "Not provided",
-        );
-        console.log("[v0] Step 4 - Private Information:");
-        console.log("[v0]   Owner Phone:", data.ownerPhone);
-        console.log("[v0]   Invoicing Email:", data.invoicingEmail);
-        console.log("[v0] ===== SUBMISSION COMPLETE =====");
 
         // Here you would typically send data to a backend API
         alert("Business submitted successfully! Check console for details.");
@@ -189,7 +140,7 @@ export function AddBusinessForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="bg-white rounded-xl shadow-sm p-8 space-y-8"
+            className="bg-white rounded-lg border border-gray-200/50 p-8 space-y-8"
           >
             {currentStep === 1 && <BusinessFormStep1 form={form} />}
             {currentStep === 2 && (
