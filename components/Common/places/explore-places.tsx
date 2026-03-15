@@ -1,26 +1,16 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
-import { Search, SlidersHorizontal, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { MapPin, Search, SlidersHorizontal } from "lucide-react";
+import { PlaceCard, PlaceCardProps } from "./place-card";
 
 import image1 from "@/public/favorite-places/favorite-places (1).png";
 import image2 from "@/public/favorite-places/favorite-places (2).png";
 import image3 from "@/public/favorite-places/favorite-places (3).png";
 import image4 from "@/public/favorite-places/favorite-places (4).png";
 
-type Place = {
-  id: number;
-  title: string;
-  location: string;
-  reviews: number;
-  category: string;
-  rating: number;
-  image: StaticImageData | string;
-};
-
-const places: Place[] = [
+const places: PlaceCardProps[] = [
   {
     id: 1,
     title: "Playa Flamingo",
@@ -77,107 +67,102 @@ const places: Place[] = [
   },
 ];
 
+import { Flame, Sparkles } from "lucide-react";
+
+const filters = [
+  {
+    label: "Filter",
+    icon: SlidersHorizontal,
+  },
+  {
+    label: "Near me",
+    icon: MapPin,
+  },
+  {
+    label: "Popular",
+    icon: Flame,
+  },
+  {
+    label: "New",
+    icon: Sparkles,
+  },
+];
+
 export default function ExplorePlaces() {
-  const filters = ["Near me", "Popular", "New"];
-
   return (
-    <section className=" max-w-360 mx-auto px-6 py-12">
-      {/* Title */}
-      <div className="mb-6">
-        <h1 className="text-4xl font-bold text-gray-900">Explore Places</h1>
+    <section className="bg-gray-50 py-16">
+      <div className=" max-w-360 mx-auto px-6">
+        {/* Title */}
+        <div className="mb-6">
+          <h1 className="text-4xl font-bold text-gray-900 leading-14">
+            Explore Places
+          </h1>
 
-        <p className="text-gray-500 mt-2">
-          Discover the most breathtaking hidden gems and popular destinations
-          across Puerto Rico for your next road trip adventure.
-        </p>
-      </div>
+          <p className="text-gray-500 mt-2 w-[670px]">
+            Discover the most breathtaking hidden gems and popular destinations
+            across Puerto Rico for your next road trip adventure.
+          </p>
+        </div>
 
-      {/* Search */}
-      <div className="flex items-center gap-3 bg-white border rounded-xl p-2 mb-6 shadow-sm">
-        <Search className="text-gray-400 ml-2" />
+        {/* Search */}
+        <div className="flex items-center gap-3 bg-white border rounded-lg  px-2 mb-6">
+          <Search className="text-gray-400 ml-2" />
 
-        <Input
-          placeholder="Search locations, parks, or beaches in Puerto Rico..."
-          className="border-none focus-visible:ring-0"
-        />
+          <Input
+            placeholder="Search locations, parks, or beaches in Puerto Rico..."
+            className="border-none  h-12 focus-visible:ring-0 shadow-none"
+          />
 
-        <Button className="bg-yellow-400 hover:bg-yellow-500 text-black rounded-lg px-6">
-          Search
-        </Button>
-      </div>
-
-      {/* Filters */}
-      <div className="flex gap-3 mb-8 flex-wrap">
-        <Button variant="outline" className="flex gap-2">
-          <SlidersHorizontal size={16} />
-          Filter
-        </Button>
-
-        {filters.map((filter) => (
-          <Button key={filter} variant="outline" className="rounded-full">
-            {filter}
+          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black rounded-full px-6">
+            Search
           </Button>
-        ))}
-      </div>
+        </div>
 
-      {/* Places Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {places.map((place) => (
-          <div
-            key={place.id}
-            className="rounded-xl overflow-hidden bg-white border hover:shadow-lg transition"
-          >
-            {/* Image */}
-            <div className="relative h-52 w-full">
-              <Image
-                src={place.image}
-                alt={place.title}
-                fill
-                className="object-cover"
-              />
+        {/* Filters */}
+        <div className="flex gap-3 mb-8 flex-wrap">
+          {/* Dynamic Filters */}
+          {filters.map((filter) => {
+            const Icon = filter.icon;
 
-              {/* Rating Badge */}
-              <div className="absolute top-3 right-3 bg-white px-2 py-1 rounded-md flex items-center gap-1 text-sm font-medium shadow">
-                <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                {place.rating}
-              </div>
-            </div>
+            return (
+              <Button
+                key={filter.label}
+                variant="outline"
+                className="rounded-full flex items-center gap-2"
+              >
+                <Icon size={16} />
+                {filter.label}
+              </Button>
+            );
+          })}
+        </div>
 
-            {/* Content */}
-            <div className="p-4">
-              <h3 className="font-semibold text-lg">{place.title}</h3>
+        {/* Places Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {places.map((place) => (
+            <PlaceCard key={place?.id} data={place} />
+          ))}
+        </div>
 
-              <div className="flex items-center text-gray-500 text-sm mt-1 gap-1">
-                <MapPin size={14} />
-                {place.location}
-              </div>
+        {/* Pagination */}
+        <div className="flex justify-center mt-10 gap-2">
+          <Button variant="outline" size="icon">
+            ‹
+          </Button>
 
-              <p className="text-gray-400 text-sm mt-1">
-                {place.reviews} reviews • {place.category}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+          <Button className="bg-yellow-400 text-black">1</Button>
 
-      {/* Pagination */}
-      <div className="flex justify-center mt-10 gap-2">
-        <Button variant="outline" size="icon">
-          ‹
-        </Button>
+          <Button variant="outline">2</Button>
+          <Button variant="outline">3</Button>
 
-        <Button className="bg-yellow-400 text-black">1</Button>
+          <span className="flex items-center px-2">...</span>
 
-        <Button variant="outline">2</Button>
-        <Button variant="outline">3</Button>
+          <Button variant="outline">12</Button>
 
-        <span className="flex items-center px-2">...</span>
-
-        <Button variant="outline">12</Button>
-
-        <Button variant="outline" size="icon">
-          ›
-        </Button>
+          <Button variant="outline" size="icon">
+            ›
+          </Button>
+        </div>
       </div>
     </section>
   );
