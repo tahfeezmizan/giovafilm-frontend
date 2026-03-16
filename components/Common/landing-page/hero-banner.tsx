@@ -51,8 +51,8 @@ export default function HeroBanner() {
           <p className="text-primary font-bold font-inter text-sm tracking-[0.2em] mb-4 leading-4 uppercase">
             Local Insight, Digital Ease
           </p>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-20 mb-4">
-            Discover Cities <br />
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-14 md:leading-20 mb-4">
+            Discover Cities <br className="hidden xl:block" />
             <span className="text-[#FFC107]">Like a Local</span>
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-lg">

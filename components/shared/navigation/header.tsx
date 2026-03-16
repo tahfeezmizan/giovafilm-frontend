@@ -140,7 +140,7 @@ export default function Header() {
                       </DropdownMenuItem>
                     </Link>
 
-                    <Link href={"/profile/favorite-places"}>
+                    <Link href={"/profile/contributions-reviews"}>
                       <DropdownMenuItem className="px-4 py-3 cursor-pointer">
                         <Star className="mr-3 size-5" />
                         Contributions & Reviews
