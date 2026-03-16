@@ -32,11 +32,11 @@ const deals: Deal[] = [
 
 export default function DealsSection() {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-6 text-center space-y-10">
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-360 mx-auto px-4 md:px-6 text-center space-y-10 font-inter">
         {/* Heading */}
         <div className="space-y-3">
-          <h2 className="text-3xl font-bold">Unlock Exclusive Local Deals</h2>
+          <h2 className="text-4xl font-bold">Unlock Exclusive Local Deals</h2>
 
           <p className="text-muted-foreground max-w-xl mx-auto">
             Access perks and discounts at our partner locations that you won't
@@ -49,21 +49,21 @@ export default function DealsSection() {
           {deals.map((deal, index) => (
             <Card
               key={index}
-              className="rounded-xl shadow-sm hover:shadow-md transition"
+              className="bg-white border border-gray-100 rounded-xl shadow-none hover:shadow-md transition py-0"
             >
-              <CardContent className="p-6 text-left space-y-4">
+              <CardContent className="p-6 text-left space-y-3">
                 {/* Icon */}
-                <div className="w-10 h-10 flex items-center justify-center bg-yellow-50 rounded-md">
+                <div className="w-10 h-10 flex items-center justify-center">
                   {deal.icon}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xs font-semibold text-muted-foreground tracking-wide">
+                <h3 className="text-xs text-[#9CA3AF] font-semibold tracking-wide">
                   {deal.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-700">{deal.description}</p>
+                <p className=" font-bold">{deal.description}</p>
               </CardContent>
             </Card>
           ))}

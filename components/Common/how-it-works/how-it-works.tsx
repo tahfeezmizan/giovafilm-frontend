@@ -20,7 +20,7 @@ export default function () {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Page container with max width and padding */}
-      <div className="max-w-360 mx-auto px-6 py-12 md:py-20">
+      <div className="max-w-360 mx-auto px-4 md:px-6 py-12 md:py-20">
         {/* Header section */}
         <div className="text-center space-y-6 mb-16">
           {/* Yellow badge with uppercase text */}

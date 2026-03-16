@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin, Camera, Tag, LayoutGrid } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   {
@@ -36,7 +37,7 @@ export function Features() {
         <div className="absolute top-0 right-0 w-full h-full bg-[#FFFDF5] clip-path-hero"></div>
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="relative z-10 max-w-360 mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* Left Content */}
         <div>
           <h2 className="text-4xl font-inter font-bold text-gray-900 leading-tight mb-6">
@@ -69,38 +70,46 @@ export function Features() {
         </div>
 
         {/* Right Content - Image Grid */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-4 md:gap-6">
           <div className="space-y-6">
-            <div className="h-[256px] rounded-[32px] overflow-hidden shadow-lg">
-              <img
+            <div className="md:h-64 rounded-[32px] overflow-hidden shadow-lg">
+              <Image
                 src="https://picsum.photos/seed/night-city/600/600"
                 alt="Night City"
+                width={500}
+                height={500}
                 className="w-full h-full object-cover aspect-square"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="h-[300px] rounded-[32px] overflow-hidden shadow-lg">
-              <img
+            <div className="h-60 md:h-75 rounded-[32px] overflow-hidden shadow-lg">
+              <Image
                 src="https://picsum.photos/seed/coffee/600/600"
                 alt="Coffee"
+                width={500}
+                height={500}
                 className="w-full h-full object-cover aspect-square"
                 referrerPolicy="no-referrer"
               />
             </div>
           </div>
-          <div className="space-y-6 pt-12">
-            <div className="h-[320px] rounded-[32px] overflow-hidden shadow-lg">
-              <img
+          <div className="space-y-6 pt-8 md:pt-12">
+            <div className="md:h-80 rounded-[32px] overflow-hidden shadow-lg">
+              <Image
                 src="https://picsum.photos/seed/alley/600/800"
                 alt="Alley"
+                width={500}
+                height={500}
                 className="w-full h-full object-cover aspect-3/4"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="h-[280px] rounded-[32px] overflow-hidden shadow-lg">
-              <img
+            <div className="md:h-70 rounded-[32px] overflow-hidden shadow-lg">
+              <Image
                 src="https://picsum.photos/seed/interior/600/600"
                 alt="Interior"
+                width={500}
+                height={500}
                 className="w-full h-full object-cover aspect-square"
                 referrerPolicy="no-referrer"
               />

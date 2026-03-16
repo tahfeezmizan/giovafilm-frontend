@@ -91,14 +91,14 @@ const filters = [
 export default function ExplorePlaces() {
   return (
     <section className="bg-gray-50 py-16">
-      <div className=" max-w-360 mx-auto px-6">
+      <div className=" max-w-360 mx-auto px-4 md:px-6">
         {/* Title */}
         <div className="mb-6">
           <h1 className="text-4xl font-bold text-gray-900 leading-14">
             Explore Places
           </h1>
 
-          <p className="text-gray-500 mt-2 w-[670px]">
+          <p className="text-gray-500 mt-2 w-167.5">
             Discover the most breathtaking hidden gems and popular destinations
             across Puerto Rico for your next road trip adventure.
           </p>

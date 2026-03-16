@@ -24,15 +24,13 @@ const features: Feature[] = [
 export default function PromoteBusiness() {
   return (
     <section className="py-20 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-360 mx-auto px-4 md:px-6">
         {/* Yellow Container */}
-        <div className="bg-[#FFC107] rounded-[48px] py-16 px-8 text-center">
+        <div className="bg-primary rounded-[48px] p-10 md:py-16 px-8 text-center font-inter">
           {/* Heading */}
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Promote Your Business
-          </h2>
+          <h2 className="text-4xl font-bold mb-4">Promote Your Business</h2>
 
-          <p className="text-gray-800 max-w-2xl mx-auto mb-12">
+          <p className="text-gray-800 max-w-2xl mx-auto mb-9 md:mb-12">
             Get discovered by travelers looking for authentic local experiences.
             Join our network of curated partners and grow your reach.
           </p>

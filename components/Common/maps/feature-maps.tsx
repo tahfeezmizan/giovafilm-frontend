@@ -59,7 +59,7 @@ export const MAP_CARDS = [
 export default function FeaturedMaps() {
   return (
     <div className="bg-gray-50 py-10 font-inter">
-      <div className="max-w-360 mx-auto px-6">
+      <div className="px- 4 md:px-6">
         <div className="flex justify-between items-center mb-5 mt-2">
           <div className="">
             <h2 className="text-3xl  font-bold leading-normal">

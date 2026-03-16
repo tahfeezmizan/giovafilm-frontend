@@ -9,6 +9,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import Link from "next/link";
 
 type MapItem = {
   title: string;
@@ -46,10 +47,8 @@ const maps: MapItem[] = [
 ];
 
 export default function MapCollection() {
-  
-
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 space-y-10">
+    <section className="max-w-360 mx-auto px-4 md:px-6 py-16 space-y-10">
       {/* Header */}
       <div className="flex items-end justify-between">
         <div>
@@ -59,14 +58,15 @@ export default function MapCollection() {
           </p>
         </div>
 
-        <button className="text-sm font-medium border-b-2 border-yellow-500">
-          View Full Catalog
-        </button>
+        <Link href={"/catalog"}>
+          <button className="text-sm font-medium border-b-2 border-yellow-500">
+            View Full Catalog
+          </button>
+        </Link>
       </div>
 
       {/* Carousel */}
       <Carousel
-        
         className="w-full"
         opts={{
           align: "start",
@@ -83,11 +83,11 @@ export default function MapCollection() {
                   alt={map.title}
                   width={600}
                   height={700}
-                  className="w-full h-[420px] object-cover"
+                  className="w-full h-105 object-cover"
                 />
 
                 {/* Dark gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent" />
 
                 {/* Price */}
                 <div className="absolute top-4 right-4 bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full">

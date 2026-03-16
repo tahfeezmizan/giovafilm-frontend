@@ -45,7 +45,7 @@ export default function AwardsPage() {
 
   return (
     <div className="py-16 bg-white min-h-screen">
-      <div className="max-w-360 mx-auto px-6">
+      <div className="max-w-360 mx-auto px-4 md:px-6">
         {/* Page Title */}
         <h1 className="text-4xl font-bold text-center mb-10">AWARDS</h1>
 

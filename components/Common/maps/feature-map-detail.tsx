@@ -62,7 +62,7 @@ export default function FeatureMapDetailPage() {
 
   return (
     <div className="bg-gray-50 min-h-screen py-8">
-      <div className="max-w-360 mx-auto px-6">
+      <div className="max-w-360 mx-auto px-4 md:px-6">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-gray-600 mb-8">
           <Link href="/" className="text-blue-600 hover:underline">

@@ -45,7 +45,7 @@ export default function HeroBanner() {
         <div className="w-1/2 bg-[#FFFDF5]"></div>
       </div>
 
-      <div className="relative z-10 max-w-360 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="relative z-10 max-w-360 mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
         {/* Left Content */}
         <div className="max-w-xl">
           <p className="text-primary font-bold font-inter text-sm tracking-[0.2em] mb-4 leading-4 uppercase">

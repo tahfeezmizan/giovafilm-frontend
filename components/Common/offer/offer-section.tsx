@@ -78,7 +78,7 @@ export default function OfferSection() {
 
   return (
     <section className="bg-gray-50">
-      <div className="max-w-360 mx-auto px-6 py-12">
+      <div className="max-w-360 mx-auto px-4 md:px-6 py-12">
         {/* Filters */}
         <div className="flex gap-3 flex-wrap mb-8">
           <Button className="bg-yellow-400 text-black hover:bg-yellow-500">

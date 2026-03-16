@@ -31,7 +31,7 @@ const steps: Step[] = [
 export default function HowItWorks() {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-360 mx-auto px-4 md:px-6">
         {/* Section Title */}
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-8">
           How It Works
