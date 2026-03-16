@@ -11,18 +11,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-/**
- * ContactForm Component
- *
- * A reusable contact form with the following fields:
- * - Name
- * - Email
- * - Subject (dropdown)
- * - Message (textarea)
- *
- * The form handles input changes and submission with proper state management.
- */
-
 interface FormData {
   name: string;
   email: string;
@@ -61,7 +49,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 md:p-10">
+    <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name and Email row - two columns on desktop, one on mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -79,7 +67,7 @@ export function ContactForm() {
               placeholder="John Doe"
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="bg-gray-100 w-full px-4 py-6 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
               required
             />
           </div>
@@ -98,7 +86,7 @@ export function ContactForm() {
               placeholder="john@example.com"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="bg-gray-100 w-full px-4 py-6 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
               required
             />
           </div>
@@ -116,10 +104,10 @@ export function ContactForm() {
             value={formData.subject}
             onValueChange={(value) => handleInputChange("subject", value)}
           >
-            <SelectTrigger className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <SelectTrigger className="bg-gray-100 w-full px-4 py-6 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="">
               <SelectItem value="General Inquiry">General Inquiry</SelectItem>
               <SelectItem value="Trip Planning">Trip Planning</SelectItem>
               <SelectItem value="Partnership">Partnership</SelectItem>
@@ -142,7 +130,7 @@ export function ContactForm() {
             placeholder="Tell us more about your adventure..."
             value={formData.message}
             onChange={(e) => handleInputChange("message", e.target.value)}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none h-32 font-sans"
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none h-32 font-sans"
             required
           ></textarea>
         </div>
@@ -150,7 +138,7 @@ export function ContactForm() {
         {/* Submit button */}
         <Button
           type="submit"
-          className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 rounded-lg transition-colors text-base"
+          className="px-10 h-14 w-full bg-[#FFC107] hover:bg-[#FFB300] text-black font-bold rounded-lg  text-base shadow-lg shadow-yellow-500/20"
         >
           Send Message →
         </Button>
