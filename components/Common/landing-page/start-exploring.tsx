@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button";
 
+import bgImg from "@/public/exploring-today.jpg";
+
 export default function StartExploring() {
   return (
     <section className="w-full flex justify-center px-6 py-16">
       <div
-        className="relative w-full max-w-6xl rounded-3xl overflow-hidden"
+        className="relative w-full max-w-360 mx-auto px-4 md:px-6 rounded-3xl overflow-hidden"
         style={{
-          backgroundImage: "url('/city.jpg')",
+          backgroundImage: `url(${bgImg.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/70" />
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center py-20 px-6 text-white">
@@ -25,7 +27,7 @@ export default function StartExploring() {
             experience the city like never before.
           </p>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-4">
             <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-5 rounded-xl">
               Browse Maps
             </Button>

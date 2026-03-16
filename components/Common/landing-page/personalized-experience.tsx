@@ -34,9 +34,9 @@ export default function PersonalizedExperience() {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background Shape */}
-      <div className="absolute inset-0 bg-[#e9dfc9] rounded-tr-[200px] z-0" />
+      <div className="absolute inset-0 bg-primary/20 rounded-tr-[200px] z-0" />
 
-      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-360 mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-between gap-10 ">
         {/* LEFT SIDE */}
         <div className="space-y-8">
           <h2 className="text-4xl font-bold">Personalized Experience</h2>
@@ -45,10 +45,10 @@ export default function PersonalizedExperience() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="rounded-xl shadow-sm bg-white/70 backdrop-blur"
+                className="rounded-xl shadow-none bg-white py-0"
               >
                 <CardContent className="flex items-start gap-4 p-6">
-                  <div className="bg-yellow-100 w-9 h-9 rounded-md flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-md flex items-center justify-center">
                     {feature.icon}
                   </div>
 
@@ -67,7 +67,7 @@ export default function PersonalizedExperience() {
 
         {/* RIGHT SIDE MOCK UI */}
         <div className="relative flex justify-center">
-          <div className="bg-white rounded-2xl shadow-xl w-[420px] p-6">
+          <div className="bg-white rounded-2xl shadow-xl w-full md:w-lg p-6">
             {/* Fake Browser Top */}
             <div className="flex gap-2 mb-6">
               <div className="w-3 h-3 bg-red-400 rounded-full" />

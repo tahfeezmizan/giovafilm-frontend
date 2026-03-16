@@ -1,16 +1,32 @@
+"use client";
+
+"use client";
+
 import { Twitter, Instagram, Globe } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import logo from "@/public/logo.png";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-100 text-gray-600">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-360 mx-auto px-4 md:px-6 py-16">
         {/* Top Footer */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <h2 className="text-xl font-bold text-black tracking-widest">
-              ROADTRIPEADO
-            </h2>
+            <div>
+              <Link href="/">
+                <Image
+                  src={logo}
+                  alt="Dashboard Logo"
+                  width={200}
+                  height={200}
+                  className="w-48 h-auto -ml-3"
+                  priority
+                />
+              </Link>
+            </div>
 
             <p className="mt-4 text-sm leading-relaxed">
               Curating the world's most authentic travel experiences through

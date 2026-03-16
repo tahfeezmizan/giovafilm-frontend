@@ -92,18 +92,18 @@ export function AddBusinessForm() {
   const progressPercentage = (currentStep / 4) * 100;
 
   return (
-    <div className="min-h-screen bg-gray-100 py-16">
-      <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg">
+    <div className="min-h-screen bg-gray-100 px-4 py-16">
+      <div className="max-w-3xl mx-auto p-4 md:p-6 bg-white rounded-lg">
         {/* Header */}
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4 md:mb-8">
           Add Your Business
         </h1>
 
         {/* Progress Bar */}
-        <div className="mb-8 space-y-2 border p-6 rounded-lg border-gray-200/50">
+        <div className="mb-4 md:mb-8 space-y-2 border p-6 rounded-lg border-gray-200/50">
           <div className="flex items-center justify-between mb-2">
             <div>
-              <p className="text-gray-500/80 uppercase tracking-wider font-bold">
+              <p className="text-sm md:text-base text-gray-500/80 uppercase tracking-wider font-bold">
                 Business Progress
               </p>
             </div>
