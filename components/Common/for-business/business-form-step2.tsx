@@ -5,33 +5,38 @@ import { Camera, Utensils, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface BusinessFormStep2Props {
-  businessPhotos?: string[];
-  menuFile?: string;
+  businessPhotos?: File[];
+  menuFile?: File | null;
   onPhotosChange?: (files: File[]) => void;
   onMenuChange?: (file: File | null) => void;
 }
 
 export function BusinessFormStep2({
   businessPhotos = [],
-  menuFile,
+  menuFile = null,
   onPhotosChange,
   onMenuChange,
 }: BusinessFormStep2Props) {
   const photosInputRef = useRef<HTMLInputElement>(null);
   const menuInputRef = useRef<HTMLInputElement>(null);
-  const [photoPreviews, setPhotoPreviews] = useState<string[]>(businessPhotos);
-  const [menuPreview, setMenuPreview] = useState<string | null>(
-    menuFile || null,
+  const [photoPreviews, setPhotoPreviews] = useState<string[]>(() =>
+    businessPhotos.map((f) => URL.createObjectURL(f))
   );
-  const [menuFileName, setMenuFileName] = useState<string>("");
+  const [menuPreview, setMenuPreview] = useState<string | null>(() =>
+    menuFile ? URL.createObjectURL(menuFile) : null
+  );
+  const [menuFileName, setMenuFileName] = useState<string>(
+    menuFile ? menuFile.name : ""
+  );
 
   const handlePhotosSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     if (files.length > 0) {
       console.log("[v0] Photos selected:", files.length);
-      const previews = files.map((file) => URL.createObjectURL(file));
-      setPhotoPreviews(previews);
-      onPhotosChange?.(files);
+      const newFiles = [...businessPhotos, ...files];
+      const newPreviews = files.map((file) => URL.createObjectURL(file));
+      setPhotoPreviews([...photoPreviews, ...newPreviews]);
+      onPhotosChange?.(newFiles);
     }
   };
 
@@ -47,11 +52,12 @@ export function BusinessFormStep2({
   };
 
   const removePhoto = (index: number) => {
-    const updated = photoPreviews.filter((_, i) => i !== index);
-    setPhotoPreviews(updated);
-    onPhotosChange?.(
-      updated.length === 0 ? [] : businessPhotos.slice(0, updated.length),
-    );
+    const updatedPreviews = photoPreviews.filter((_, i) => i !== index);
+    setPhotoPreviews(updatedPreviews);
+    
+    const updatedFiles = businessPhotos.filter((_, i) => i !== index);
+    onPhotosChange?.(updatedFiles);
+    
     if (photosInputRef.current) {
       photosInputRef.current.value = "";
     }

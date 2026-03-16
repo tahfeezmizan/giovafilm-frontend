@@ -145,10 +145,8 @@ export function AddBusinessForm() {
             {currentStep === 1 && <BusinessFormStep1 form={form} />}
             {currentStep === 2 && (
               <BusinessFormStep2
-                businessPhotos={businessPhotos.map((f) =>
-                  URL.createObjectURL(f),
-                )}
-                menuFile={menuFile ? URL.createObjectURL(menuFile) : undefined}
+                businessPhotos={businessPhotos}
+                menuFile={menuFile}
                 onPhotosChange={setBusinessPhotos}
                 onMenuChange={setMenuFile}
               />
