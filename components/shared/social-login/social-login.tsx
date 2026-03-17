@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function SocialLogin() {
   return (
-    <div className="w-full grid grid-cols-2 gap-4 mb-10">
+    <div className="w-full grid grid-cols-2 gap-4">
       <button className="flex items-center justify-center gap-3 py-3.5 bg-white border border-[#EEEEEE] rounded-2xl shadow-sm hover:bg-gray-50 transition-all cursor-pointer">
         <Image
           src={require("@/public/google.png")}

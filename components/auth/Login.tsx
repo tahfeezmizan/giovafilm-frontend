@@ -27,27 +27,27 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-8 pt-16 pb-8 min-h-screen">
-      {/* Logo */}
-
-      <Link href="/" className="mb-8">
-        <Image
-          src={require("@/public/logo.png")}
-          width={300}
-          height={150}
-          alt="Roadtripeado Logo"
-          className="w-72"
-        />
-      </Link>
-
+    <div className="flex flex-col justify-center min-h-screen">
       {/* Welcome Text */}
-      <div className="text-center mb-8">
+      <div className="mb-8">
         <h2 className="text-2xl font-bold text-[#1A1A1A] mb-2">
-          Welcome to Roadtripeado
+          Create an account
         </h2>
         <p className="text-sm text-[#757575]">
-          Sign in to continue your adventure
+          Welcome to the community! Join us and start your adventure.
         </p>
+      </div>
+
+      {/* Social Login */}
+      <SocialLogin />
+
+      {/* Divider */}
+      <div className="w-full flex items-center my-8">
+        <div className="flex-1 h-px bg-[#EEEEEE]"></div>
+        <span className="px-4 text-[10px] font-medium text-[#9E9E9E] uppercase tracking-wider">
+          Or continue with
+        </span>
+        <div className="flex-1 h-px bg-[#EEEEEE]"></div>
       </div>
 
       {/* Form */}
@@ -102,18 +102,6 @@ export const Login = () => {
           Login
         </Button>
       </form>
-
-      {/* Divider */}
-      <div className="w-full flex items-center my-8">
-        <div className="flex-1 h-px bg-[#EEEEEE]"></div>
-        <span className="px-4 text-[10px] font-medium text-[#9E9E9E] uppercase tracking-wider">
-          Or continue with
-        </span>
-        <div className="flex-1 h-px bg-[#EEEEEE]"></div>
-      </div>
-
-      {/* Social Login */}
-      <SocialLogin />
 
       {/* Footer */}
       <div className="text-sm">

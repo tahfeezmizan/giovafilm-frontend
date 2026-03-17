@@ -61,7 +61,7 @@ export default function Header() {
   return (
     <div>
       <header className="border-b border-gray-100 relative">
-        <nav className="flex items-center justify-between px-6 py-4 max-w-360 mx-auto gap-4">
+        <nav className="flex items-center justify-between px-1 md:px-6 py-4 max-w-360 mx-auto gap-4">
           {/* Logo */}
           <div className="shrink-0">
             <Link href="/">
@@ -201,25 +201,33 @@ export default function Header() {
                   className="w-64 p-0 overflow-hidden rounded-xl shadow-lg"
                 >
                   <div className="py-2">
-                    <DropdownMenuItem className="px-4 py-3 cursor-pointer">
-                      <Heart className="mr-3 size-5" />
-                      Favorites
-                    </DropdownMenuItem>
+                    <Link href={"/profile/favorite-places"}>
+                      <DropdownMenuItem className="px-4 py-3 cursor-pointer">
+                        <Heart className="mr-3 size-5" />
+                        Favorites
+                      </DropdownMenuItem>
+                    </Link>
 
-                    <DropdownMenuItem className="px-4 py-3 cursor-pointer">
-                      <Map className="mr-3 size-5" />
-                      Purchased Maps
-                    </DropdownMenuItem>
+                    <Link href={"/profile/purchased-maps"}>
+                      <DropdownMenuItem className="px-4 py-3 cursor-pointer">
+                        <Map className="mr-3 size-5" />
+                        Purchased Maps
+                      </DropdownMenuItem>
+                    </Link>
 
-                    <DropdownMenuItem className="px-4 py-3 cursor-pointer">
-                      <Star className="mr-3 size-5" />
-                      Contributions
-                    </DropdownMenuItem>
+                    <Link href={"/profile/contributions-reviews"}>
+                      <DropdownMenuItem className="px-4 py-3 cursor-pointer">
+                        <Star className="mr-3 size-5" />
+                        Contributions
+                      </DropdownMenuItem>
+                    </Link>
 
-                    <DropdownMenuItem className="px-4 py-3 cursor-pointer">
-                      <Trophy className="mr-3 size-5" />
-                      Awards
-                    </DropdownMenuItem>
+                    <Link href={"/profile/awards"}>
+                      <DropdownMenuItem className="px-4 py-3 cursor-pointer">
+                        <Trophy className="mr-3 size-5" />
+                        Awards
+                      </DropdownMenuItem>
+                    </Link>
                   </div>
 
                   <DropdownMenuSeparator />
