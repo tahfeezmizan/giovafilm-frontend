@@ -58,13 +58,13 @@ export function ProfileSidebar({ data }: ProfileProps) {
 
         {/* Action Buttons */}
         <div className="space-y-3">
-          <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-lg flex items-center justify-center gap-2">
+          <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded flex items-center justify-center gap-2">
             <Edit2 size={18} />
             Edit Profile
           </Button>
           <Button
             variant="outline"
-            className="w-full rounded-lg flex items-center justify-center gap-2 border-gray-200"
+            className="w-full rounded flex items-center justify-center gap-2 border-gray-200"
           >
             <Share2 size={18} />
             Share Profile

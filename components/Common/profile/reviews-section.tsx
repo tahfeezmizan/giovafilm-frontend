@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import Link from "next/link";
 
-
 interface Review {
   id: number;
   title: string;
@@ -42,10 +41,10 @@ export function ReviewsSection({ reviews, reviewCount }: ReviewsSectionProps) {
         {reviews.map((review) => (
           <div
             key={review.id}
-            className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow flex"
+            className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow flex flex-col md:flex-row"
           >
             {/* Image Section */}
-            <div className="relative w-40 h-40 flex-shrink-0">
+            <div className="relative w-full md:w-56  h-64 md:h-auto shrink-0">
               <Image
                 src={review.image}
                 alt={review.title}
@@ -53,7 +52,7 @@ export function ReviewsSection({ reviews, reviewCount }: ReviewsSectionProps) {
                 className="object-cover"
               />
               {/* Location Badge */}
-              <div className="absolute bottom-3 left-3 bg-white px-2 py-1 rounded-md text-xs font-semibold text-gray-900 shadow-md">
+              <div className="absolute bottom-3 left-1 bg-white px-2 py-1 rounded-md text-xs font-semibold text-gray-900 shadow-md">
                 📍 {review.location}
               </div>
             </div>

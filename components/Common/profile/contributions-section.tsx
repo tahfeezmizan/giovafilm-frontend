@@ -1,15 +1,5 @@
 "use client";
 
-/**
- * ContributionsSection Component
- *
- * Displays user's contribution statistics including:
- * - Total points earned
- * - Number of reviews written
- * - Photos uploaded
- * - Progress bar to next level
- */
-
 interface ContributionsSection {
   totalPoints: number;
   reviews: number;
@@ -36,7 +26,7 @@ export function ContributionsSection({ contributions }: ContributionsProps) {
       </div>
 
       {/* Statistics Grid */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {/* Total Points */}
         <div className="bg-gray-50 rounded-xl p-6 text-center border border-gray-100">
           <p className="text-gray-500 text-xs font-semibold tracking-wide mb-2">
