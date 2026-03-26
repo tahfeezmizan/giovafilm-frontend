@@ -52,8 +52,12 @@ export default function Footer() {
             </h3>
 
             <ul className="space-y-3 text-sm">
-              <li className="hover:text-black cursor-pointer">Map Catalog</li>
-              <li className="hover:text-black cursor-pointer">How it Works</li>
+              <li className="hover:text-black cursor-pointer">
+                <Link href="/catalog">Map Catalog</Link>
+              </li>
+              <li className="hover:text-black cursor-pointer">
+                <Link href="/how-it-works">How it Works</Link>
+              </li>
               <li className="hover:text-black cursor-pointer">
                 Explorers Stories
               </li>
@@ -71,7 +75,7 @@ export default function Footer() {
 
             <ul className="space-y-3 text-sm">
               <li className="hover:text-black cursor-pointer">
-                Add Your Business
+                <Link href={"/for-business"}>Add Your Business</Link>
               </li>
               <li className="hover:text-black cursor-pointer">
                 Partner Dashboard
@@ -91,12 +95,14 @@ export default function Footer() {
 
             <ul className="space-y-3 text-sm">
               <li className="hover:text-black cursor-pointer">About Us</li>
-              <li className="hover:text-black cursor-pointer">Contact</li>
               <li className="hover:text-black cursor-pointer">
-                Privacy Policy
+                <Link href={"/contact"}>Contact</Link>
               </li>
               <li className="hover:text-black cursor-pointer">
-                Terms of Service
+                <Link href={"/privacy-policy"}>Privacy Policy</Link>
+              </li>
+              <li className="hover:text-black cursor-pointer">
+                <Link href={"/terms-of-service"}>Terms of Service</Link>
               </li>
             </ul>
           </div>
