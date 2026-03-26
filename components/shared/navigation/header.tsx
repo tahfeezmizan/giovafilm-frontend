@@ -11,7 +11,17 @@ import {
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import { Search, Heart, Map, Star, Trophy, User, Menu, X } from "lucide-react";
+import {
+  Search,
+  Heart,
+  Map,
+  Star,
+  Trophy,
+  User,
+  Menu,
+  X,
+  Grid2x2,
+} from "lucide-react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -126,6 +136,13 @@ export default function Header() {
                   className="w-72 p-0 overflow-hidden rounded-xl shadow-lg"
                 >
                   <div className="py-2">
+                    <Link href={"/dashboard"}>
+                      <DropdownMenuItem className="px-4 py-3 cursor-pointer">
+                        <Grid2x2 className="mr-3 size-5" />
+                        Dashoard
+                      </DropdownMenuItem>
+                    </Link>
+
                     <Link href={"/profile/favorite-places"}>
                       <DropdownMenuItem className="px-4 py-3 cursor-pointer">
                         <Heart className="mr-3 size-5" />

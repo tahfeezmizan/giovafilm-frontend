@@ -1,11 +1,11 @@
 'use client'
 
-import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form'
+import { Checkbox } from '@/components/ui/checkbox'
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Checkbox } from '@/components/ui/checkbox'
+import { Shield } from 'lucide-react'
 import { UseFormReturn } from 'react-hook-form'
-import { AlertCircle, Shield } from 'lucide-react'
 
 interface BusinessFormStep3Props {
   form: UseFormReturn<any>

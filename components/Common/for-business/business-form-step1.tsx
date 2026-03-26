@@ -49,53 +49,58 @@ export function BusinessFormStep1({ form }: BusinessFormStep1Props) {
           </h3>
         </div>
 
-        <FormField
-          control={form.control}
-          name="businessName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-gray-900 font-semibold">
-                Business Name
-              </FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="e.g. Sunset Peak Lodge"
-                  {...field}
-                  type="text"
-                  className="bg-gray-50 border-gray-200"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="category"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-gray-900 font-semibold ">
-                Category
-              </FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl className="w-full">
-                  <SelectTrigger className="bg-gray-50 border-gray-200">
-                    <SelectValue placeholder="Select a category" />
-                  </SelectTrigger>
+        <div className="grid md:grid-cols-2 gap-4">
+          <FormField
+            control={form.control}
+            name="businessName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-gray-900 font-semibold">
+                  Business Name
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="e.g. Sunset Peak Lodge"
+                    {...field}
+                    type="text"
+                    className="bg-gray-50 border-gray-200"
+                  />
                 </FormControl>
-                <SelectContent>
-                  {categories.map((cat) => (
-                    <SelectItem key={cat} value={cat}>
-                      {cat}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="category"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-gray-900 font-semibold ">
+                  Category
+                </FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl className="w-full">
+                    <SelectTrigger className="bg-gray-50 border-gray-200">
+                      <SelectValue placeholder="Select a category" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {categories.map((cat) => (
+                      <SelectItem key={cat} value={cat}>
+                        {cat}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <FormField
           control={form.control}
