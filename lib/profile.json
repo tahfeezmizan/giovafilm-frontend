@@ -4,7 +4,12 @@
     "name": "John Doe",
     "joinDate": "Oct 2023",
     "level": "LEVEL 4 EXPLORER",
-    "avatar": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-cCXkaJSzQJRCUYCrlUAlt6qfCglfjL.png"
+    "avatar": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-cCXkaJSzQJRCUYCrlUAlt6qfCglfjL.png",
+    "milestones": {
+      "distanceTraveled": "12,450 km",
+      "placesVisited": 48,
+      "tripsPlanned": 12
+    }
   },
   "contributions": {
     "totalPoints": 2450,
@@ -13,11 +18,7 @@
     "progressToNextLevel": 82,
     "pointsUntilNextLevel": 550
   },
-  "milestones": {
-    "distanceTraveled": "12,450 km",
-    "placesVisited": 48,
-    "tripsPlanned": 12
-  },
+
   "reviews": [
     {
       "id": 1,

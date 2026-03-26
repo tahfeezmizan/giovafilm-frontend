@@ -142,6 +142,12 @@ export default function Header() {
                         Dashoard
                       </DropdownMenuItem>
                     </Link>
+                    <Link href={"/profile"}>
+                      <DropdownMenuItem className="px-4 py-3 cursor-pointer">
+                        <Grid2x2 className="mr-3 size-5" />
+                        Profile
+                      </DropdownMenuItem>
+                    </Link>
 
                     <Link href={"/profile/favorite-places"}>
                       <DropdownMenuItem className="px-4 py-3 cursor-pointer">

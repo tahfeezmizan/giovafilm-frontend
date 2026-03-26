@@ -6,9 +6,8 @@ import { ReviewsSection } from "./reviews-section";
 
 import profileData from "@/lib/profile.json";
 
-
 export default function ProfilePage() {
-  const { user, contributions, milestones, reviews } = profileData;
+  const { user, contributions, reviews } = profileData;
 
   return (
     <main className="bg-gray-50 min-h-screen py-12">
@@ -17,25 +16,13 @@ export default function ProfilePage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* Left Sidebar - 1/4 width */}
           <div className="lg:col-span-1">
-            <ProfileSidebar
-              name={user.name}
-              level={user.level}
-              joinDate={user.joinDate}
-              avatar={user.avatar}
-              milestones={milestones}
-            />
+            <ProfileSidebar data={user} />
           </div>
 
           {/* Right Content - 3/4 width */}
           <div className="lg:col-span-3 space-y-10">
             {/* Contributions Section */}
-            <ContributionsSection
-              totalPoints={contributions.totalPoints}
-              reviews={contributions.reviews}
-              photos={contributions.photos}
-              progressToNextLevel={contributions.progressToNextLevel}
-              pointsUntilNextLevel={contributions.pointsUntilNextLevel}
-            />
+            <ContributionsSection contributions={contributions} />
 
             {/* Reviews Section */}
             <ReviewsSection
