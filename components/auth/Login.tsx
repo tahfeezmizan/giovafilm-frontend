@@ -24,7 +24,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center min-h-screen">
+    <div className="flex flex-col justify-center">
       {/* Welcome Text */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-[#1A1A1A] mb-2">Welcome Back</h2>
